@@ -21,7 +21,7 @@ export default function Home() {
             <div className="bg-white rounded-2xl p-8 shadow-lg">
               <h2 className="text-2xl font-semibold text-gray-900 mb-4">Girls Community</h2>
               <p className="text-gray-600">
-                We know the grind—labs, codes, deadlines. But there's another side of us that's just as powerful: the
+                We know the grind—labs, codes, deadlines. But there&rsquo;s another side of us that&rsquo;s just as powerful: the
                 one that crafts, blooms, and breathes.
               </p>
             </div>
