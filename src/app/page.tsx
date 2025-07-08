@@ -1,22 +1,33 @@
-import Image from 'next/image'
+import Navbar from "@/app/components/Navbar"
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        {/* Rest of your existing main content */}
+    <div className="min-h-screen bg-gradient-to-br from-pink-50 to-purple-50">
+      <Navbar />
+
+      {/* Main content with top padding to account for fixed navbar */}
+      <main className="pt-24 px-4">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center py-20">
+            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+              Welcome to{" "}
+              <span className="bg-gradient-to-r from-pink-500 to-purple-600 bg-clip-text text-transparent">
+                Her Side Project
+              </span>
+            </h1>
+            <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+              A space for women in STEM to slow down, create with their hands, and connect with kindred spirits.
+            </p>
+            <div className="bg-white rounded-2xl p-8 shadow-lg">
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4">Girls Community</h2>
+              <p className="text-gray-600">
+                We know the grind—labs, codes, deadlines. But there's another side of us that's just as powerful: the
+                one that crafts, blooms, and breathes.
+              </p>
+            </div>
+          </div>
+        </div>
       </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        {/* Your existing footer content */}
-      </footer>
     </div>
   )
 }
