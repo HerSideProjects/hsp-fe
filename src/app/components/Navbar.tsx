@@ -9,9 +9,9 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
 
   const navLinks = [
-    { href: "/about", label: "About Us" },
-    { href: "/people", label: "People Behind" },
-    { href: "/contact", label: "Contact Us" },
+    // { href: "/about", label: "About Us" },
+    // { href: "/people", label: "People Behind" },
+    { href: "https://instagram.com/hersideproject.id/", label: "Contact Us" },
   ]
 
   return (
