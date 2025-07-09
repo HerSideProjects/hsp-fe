@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import '@/styles/globals.css'
+import Footer from '@/app/components/Footer'
 
 export const metadata: Metadata = {
   title: 'Her Side Project Frontend',
@@ -13,7 +14,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="antialiased">{children}</body>
+      <body className="min-h-screen antialiased">
+        {children}
+      </body>
     </html>
   )
 }
