@@ -16,13 +16,13 @@ export default function Navbar() {
 
   return (
     <>
-    <nav className="fixed top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-6xl z-50">
+    <nav className="fixed top-4 left-1/2 -translate-x-1/2 w-[100%] max-w-8xl z-50 px-8">
         <div className="flex items-stretch gap-2">
             {/* Navbar Hitam */}
-            <div className="flex flex-1 items-center justify-between bg-black/90 backdrop-blur-md rounded-2xl shadow-xl border border-white/10 px-6">
+            <div className="flex flex-1 items-center justify-between bg-black/90 backdrop-blur-md rounded-2xl shadow-xl border border-white/10 px-8 h-20">
             {/* Logo */}
             <Link href="/" className="flex items-center space-x-2">
-                <div className="w-14 h-14 relative -my-1">
+                <div className="w-16 h-16 relative -my-1">
                 <Image
                     src="/assets/images/Icon.png"
                     alt="Her Side Project"
@@ -38,7 +38,7 @@ export default function Navbar() {
                 <Link
                     key={link.href}
                     href={link.href}
-                    className="text-white/90 hover:text-white text-sm font-medium transition"
+                    className="text-white/90 hover:text-white text-lg font-medium transition"
                 >
                     {link.label}
                 </Link>
@@ -76,8 +76,14 @@ export default function Navbar() {
           <div className="fixed right-0 top-0 h-full w-80 max-w-[85vw] bg-black/95 border-l border-white/10 p-6">
             {/* Close Button */}
             <div className="flex justify-between items-center mb-8">
-              <Link href="/" className="text-xl font-bold text-white" onClick={() => setIsOpen(false)}>
-                Her Side Project
+              <Link href="/" onClick={() => setIsOpen(false)}>
+                <Image
+                  src="/assets/images/Icon.png"
+                  alt="Her Side Project Logo"
+                  width={80}
+                  height={48}
+                  priority
+                />
               </Link>
               <button
                 onClick={() => setIsOpen(false)}
