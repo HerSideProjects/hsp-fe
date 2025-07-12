@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
-import { SelectArrowIcon } from "../../../../public/assets/icons/SelectArrowIcon";
-import { SelectCloseIcon } from "../../../../public/assets/icons/SelectCloseIcon";
+import { SelectArrowIcon } from "../../../public/assets/icons/SelectArrowIcon";
+import { SelectCloseIcon } from "../../../public/assets/icons/SelectCloseIcon";
 
 interface Option {
   label: string;

@@ -2,8 +2,8 @@ import type { Metadata } from 'next'
 import '@/styles/globals.css'
 import localFont from "next/font/local";
 import { Manrope } from 'next/font/google'
-import Navbar from './components/Navbar'
-import Footer from '@/app/components/Footer'
+import Navbar from '../components/Navbar'
+import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
   title: 'Her Side Project Frontend',
@@ -28,7 +28,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`antialiased ${lostaMasta.variable} ${manrope.variable} ${manrope.className}`}>
+      <body className={`antialiased ${lostaMasta.variable} ${manrope.variable} ${manrope.className}`} >
         <Navbar />
           {children}
         <Footer />

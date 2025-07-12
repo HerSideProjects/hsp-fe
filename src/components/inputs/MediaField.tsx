@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useRef, useState } from "react";
-import { UploadIcon } from "../../../../public/assets/icons/UploadIcon";
+import { UploadIcon } from "../../../public/assets/icons/UploadIcon";
 
 type MediaFieldProps = {
   onFileSelect: (file: File | null) => void;

@@ -1,8 +1,11 @@
+import TeamCard from "@/components/cards/TeamCard"
+import TeamSection from "@/components/modules/teamSection"
+
 export default function Home() {
   return (
-    <div className="min-h-screen flex flex-col bg-[#FEF6EB] z-10">
+    <div className="min-h-screen flex flex-col bg-[#FEF6EB] z-10 scroll-hidden">
       <main className="flex-1 pt-28 px-8 pb-36">
-        <div className="max-w-8xl mx-auto">
+        <div className="max-w-8xl mx-auto flex flex-col gap-24">
           <section className="relative bg-[#EF3187] bg-cover bg-center rounded-3xl shadow-xl p-8 md:p-12 text-white" style={{ backgroundImage: "url('/assets/images/bg-hero.png')" }}>
             <div className="flex flex-col md:flex-row">
               <div className="md:w-3/5 pt-4">
@@ -33,6 +36,7 @@ export default function Home() {
               </div>
             </div>
           </section>
+          <TeamSection/>
         </div>
       </main>
     </div>

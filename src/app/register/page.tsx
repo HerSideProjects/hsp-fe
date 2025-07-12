@@ -1,9 +1,9 @@
 "use client"
 
 import React, { useState } from 'react'
-import TextField from '../components/inputs/TextField'
-import { SelectField } from '../components/inputs/SelectField'
-import { MediaField } from '../components/inputs/MediaField'
+import TextField from '../../components/inputs/TextField'
+import { SelectField } from '../../components/inputs/SelectField'
+import { MediaField } from '../../components/inputs/MediaField'
 import { submitRegistration } from './actions'
 import { options } from './const'
 
@@ -29,7 +29,7 @@ const RegisterPage = () => {
 
   return (
     <div className="min-h-screen bg-[#A6C0FF]">
-      <main className="pt-24 px-10 flex flex-col items-center">
+      <main className="pt-36 px-10 flex flex-col items-center">
         <form className="bg-[#FEF6EB] flex flex-col items-center rounded-2xl px-12 py-12 gap-6 w-full border border-[#1C1719]" onSubmit={handleSubmit}>
             <div className="flex flex-col items-center">
                 <h1 className="font-lostaMasta text-3xl">Registration Form</h1>
