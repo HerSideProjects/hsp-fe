@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useEffect, useState } from 'react';
+import Image from "next/image";
 
 const targetDate = new Date('2025-08-01T23:59:59');
 
@@ -46,9 +47,11 @@ export default function Countdown() {
       className="relative mt-12 bg-[#EF3187] text-white text-center px-8 py-16 rounded-3xl overflow-hidden"
       style={{ backgroundImage: "url('/assets/images/pattern.png')" }}
     >
-      <img
+      <Image
         src="/assets/images/top-decor.png"
         alt="Top Decoration"
+        width={1335}
+        height={50}
         className="absolute top-0 left-0 w-full h-auto pointer-events-none"
       />
       <h2 className="text-4xl md:text-6xl pt-5 md:pt-40 font-semibold mb-2" style={{ fontFamily: 'Losta Masta Medium, sans-serif' }}>Registration Closed</h2>
@@ -63,9 +66,11 @@ export default function Countdown() {
         <div className="hidden md:flex items-center justify-center text-white text-3xl font-bold">:</div>
         {timeBlock(timeLeft?.seconds ?? 0, 'Seconds')}
       </div>
-      <img
+      <Image
         src="/assets/images/bottom-decor.png"
         alt="Bottom Decoration"
+        width={1335}
+        height={50}
         className="absolute bottom-0 left-0 w-full h-auto pointer-events-none"
       />
     </section>

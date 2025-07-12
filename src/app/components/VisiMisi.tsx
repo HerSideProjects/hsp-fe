@@ -1,7 +1,7 @@
 export default function VisiMisi() {
   return (
     <section
-      className="relative mt-12 text-white text-center px-8 py-16 rounded-3xl overflow-hidden"
+      className="relative w-full mt-12 text-white text-center py-16"
       style={{ backgroundImage: "url('/assets/images/bg-vismis.png')" }}
     >
       <p className="text-lg text-[#000000] pt-5 md:text-2xl mb-10 font-light">Core Values</p>
