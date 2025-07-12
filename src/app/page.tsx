@@ -3,9 +3,6 @@ import Navbar from "@/app/components/Navbar"
 export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-pink-50 to-purple-50">
-      <Navbar />
-
-      {/* Main content with top padding to account for fixed navbar */}
       <main className="pt-24 px-4">
         <div className="max-w-4xl mx-auto">
           <div className="text-center py-20">
