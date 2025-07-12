@@ -18,7 +18,7 @@ const TeamSection = () => {
               <TeamCard name="Shafira" imagePath="/assets/images/team-dummy.png" alt="Nadhira Hafez" role="Founder & President"/>
               <TeamCard name="Shafira" imagePath="/assets/images/team-dummy.png" alt="Nadhira Hafez" role="Founder & President"/>
             </div>
-          </section>
+    </section>
     );
 };
 
