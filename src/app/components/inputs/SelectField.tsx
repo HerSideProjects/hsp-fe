@@ -39,7 +39,7 @@ export const SelectField = ({options, placeholder = "Pick ur interest (can multi
   };
 
   return (
-    <div className="relative w-full">
+    <div className="relative w-full ">
       <button
         type="button"
         className="relative flex w-full rounded-lg border bg-[#FFF0DC] p-[10px] text-left"
@@ -71,7 +71,7 @@ export const SelectField = ({options, placeholder = "Pick ur interest (can multi
         </div>
       )}
       {selected.length > 0 && (
-        <div className="flex flex-wrap gap-2 mt-2 max-w-80">
+        <div className="flex flex-wrap gap-2 mt-2">
         {selected.map((category, index) => (
         <div key={index} className="bg-[#E2F1AE] text-[#1C1719] p-2 rounded-lg border border-[#1C1719] w-fit text-xs">
             <div className="flex gap-1 justify-between items-center">

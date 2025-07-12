@@ -5,14 +5,15 @@ interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
   className?: string;
   placeholder?: string;
   error?: string;
+  name?: string;
 }
 
-const TextField = ({ error, label, className, placeholder, ...props }: Props) => {
+const TextField = ({ error, label, className, placeholder, name, ...props }: Props) => {
   return (
     <div className="flex flex-col gap-2 w-full">
         <p className="font-lostaMasta">{label}</p>
         <div>
-        <input className="bg-[#FFF0DC] border w-full p-[10px] rounded-lg" type="text" placeholder={placeholder}/>
+        <input className="bg-[#FFF0DC] border w-full p-[10px] rounded-lg" type="text" placeholder={placeholder} name={name}/>
         {error && (
           <p className="text-[10px] absolute">{error}</p>
         )}
