@@ -1,28 +1,38 @@
-import Navbar from "@/app/components/Navbar"
-
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-pink-50 to-purple-50">
-      <main className="pt-24 px-4">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center py-20">
-            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-              Welcome to{" "}
-              <span className="bg-gradient-to-r from-pink-500 to-purple-600 bg-clip-text text-transparent">
-                Her Side Project
-              </span>
-            </h1>
-            <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-              A space for women in STEM to slow down, create with their hands, and connect with kindred spirits.
-            </p>
-            <div className="bg-white rounded-2xl p-8 shadow-lg">
-              <h2 className="text-2xl font-semibold text-gray-900 mb-4">Girls Community</h2>
-              <p className="text-gray-600">
-                We know the grind—labs, codes, deadlines. But there&rsquo;s another side of us that&rsquo;s just as powerful: the
-                one that crafts, blooms, and breathes.
-              </p>
+    <div className="min-h-screen flex flex-col bg-[#FEF6EB] z-10">
+      <main className="flex-1 pt-28 px-8 pb-36">
+        <div className="max-w-8xl mx-auto">
+          <section className="relative bg-[#EF3187] bg-cover bg-center rounded-3xl shadow-xl p-8 md:p-12 text-white" style={{ backgroundImage: "url('/assets/images/bg-hero.png')" }}>
+            <div className="flex flex-col md:flex-row">
+              <div className="md:w-3/5 pt-4">
+                <span className="inline-block bg-lime-100 text-gray-900 font-semibold px-3 py-1 rounded-full mb-3">
+                  Girls Community
+                </span>
+                <h1 className="text-[64px] md:text-[120px] leading-none mb-4 text-white" style={{ fontFamily: 'Losta Masta, sans-serif' }}>
+                  Her Side   <br /> Project
+                </h1>
+                <p className="text-base md:text-2xl text-white mb-6">
+                  A space for women in STEM to slow down, create with their hands, and connect with kindred spirits.
+                  We know the grind—labs, codes, deadlines. But there&rsquo;s another side of us that&rsquo;s just as powerful.
+                </p>
+                <a
+                  href="#"
+                  className="inline-block bg-white text-pink-700 text-base md:text-2xl font-semibold px-5 py-3 md:px-7 md:py-5 rounded-xl hover:bg-pink-200 transition"
+                >
+                  Register First Event! ↗
+                </a>
+              </div>
+
+              <div className="md:w-2/5 flex justify-center md:justify-end mt-4 md:mt-0">
+                <img
+                  src="/assets/images/magnifier.png"
+                  alt="Magnifier"
+                  className="hidden md:block w-[71%] max-w-sm md:max-w-full h-auto object-contain self-center"
+                />
+              </div>
             </div>
-          </div>
+          </section>
         </div>
       </main>
     </div>
