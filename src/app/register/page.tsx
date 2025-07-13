@@ -28,6 +28,10 @@ const RegisterPage = () => {
   };
 
   return (
+    <div>
+    <div>
+
+    </div>
     <div className="min-h-screen bg-[#A6C0FF]">
       <main className="pt-36 px-10 flex flex-col items-center">
         <form className="bg-[#FEF6EB] flex flex-col items-center rounded-2xl px-12 py-12 gap-6 w-full border border-[#1C1719]" onSubmit={handleSubmit}>
@@ -61,6 +65,7 @@ const RegisterPage = () => {
             <input type="hidden" name="interest" value={selectedCategory.join(",")} />
         </form>
       </main>
+    </div>
     </div>
   )
 }

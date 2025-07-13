@@ -33,7 +33,7 @@ export default function Footer() {
   return (
     <footer className="relative bottom-0 left-0 right-0 bg-white overflow-hidden z-5">
       <div ref={scrollRef} className="flex whitespace-nowrap overflow-x-hidden py-2 bg-pink-500">
-        <div className="flex items-center space-x-4 text-white font-medium px-4">
+        <div className="flex items-center space-x-4 text-white font-medium px-4 font-lostaMasta">
           <span>✿ Her Side Project</span>
           <span>✿ Her Side Project</span>
           <span>✿ Her Side Project</span>

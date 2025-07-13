@@ -44,7 +44,7 @@ export default function Countdown() {
 
   return (
     <section
-      className="relative mt-12 bg-[#EF3187] text-white text-center px-8 py-16 rounded-3xl overflow-hidden"
+      className="relative bg-[#EF3187] text-white text-center px-8 py-16 rounded-3xl overflow-hidden"
       style={{ backgroundImage: "url('/assets/images/pattern.png')" }}
     >
       <Image

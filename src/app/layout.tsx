@@ -15,6 +15,11 @@ const lostaMasta = localFont({
   variable: "--font-losta-masta",
 });
 
+const desirableCalligraphy = localFont({
+  src: "./fonts/DesirableCalligraphy.ttf",
+  variable: "--font-desirable-calligraphy",
+});
+
 const manrope = Manrope({
   subsets: ['latin'],
   display: 'swap',
@@ -28,7 +33,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`antialiased ${lostaMasta.variable} ${manrope.variable} ${manrope.className}`} >
+      <body className={`antialiased ${lostaMasta.variable} ${manrope.variable} ${manrope.className} ${desirableCalligraphy.variable}`} >
         <Navbar />
           {children}
         <Footer />
