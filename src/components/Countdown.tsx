@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import Image from "next/image";
 
-const targetDate = new Date('2025-08-01T00:00:00');
+const targetDate = new Date('2025-07-31T23:59:59');
 
 const getTimeLeft = () => {
   const now = new Date();
@@ -44,7 +44,7 @@ export default function Countdown() {
 
   return (
     <section
-      className="relative bg-[#EF3187] text-white text-center px-8 py-16 rounded-3xl overflow-hidden"
+      className="relative mt-12 bg-[#EF3187] text-white text-center px-8 py-16 rounded-3xl overflow-hidden"
       style={{ backgroundImage: "url('/assets/images/pattern.png')" }}
     >
       <Image
