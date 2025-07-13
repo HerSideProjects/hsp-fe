@@ -14,11 +14,11 @@ const TeamCard = ({name, imagePath, className, alt, role }: Props) => {
     
   return (
     <div className={twMerge(
-        `text-[#FEF6EB] min-w-[268px] h-[462px] flex flex-col rounded-[20px] pl-6 pt-6 overflow-hidden`, className
+        `text-[#FEF6EB] md:min-w-[268px] min-w-[168px] md:h-[462px] h-[322px] flex flex-col rounded-[20px] pl-6 pt-6 overflow-hidden`, className
       )}>
         <div>
-            <p className="font-lostaMasta text-[32px]">{name}</p>
-            <p className="text-2xl pr-6">{role}</p>
+            <p className="font-lostaMasta md:text-[32px] text-2xl">{name}</p>
+            <p className="md:text-2xl pr-6">{role}</p>
         </div>
         <div className="flex-grow"></div>
         <div className="w-full flex justify-center">

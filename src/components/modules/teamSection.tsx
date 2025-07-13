@@ -5,8 +5,8 @@ const TeamSection = () => {
   return (
     <section className="flex flex-col gap-10">
             <div>
-              <p className="font-lostaMasta text-7xl">Meet <span className="text-[#EF3187]">the Team</span></p>
-              <p className="text-2xl">Meet the minds behind the mission!</p>
+              <p className="font-lostaMasta md:text-7xl text-4xl">Meet <span className="text-[#EF3187]">the Team</span></p>
+              <p className="md:text-2xl">Behind every great idea is a passionate team ready to bring it to life!</p>
             </div>
             <div className="flex gap-[28px] overflow-scroll scroll-hidden">
               <TeamCard name="Shafira" imagePath="/assets/images/shafira.png" alt="Shafira" role="Founder & President" className="bg-[#1C1719]"/>
