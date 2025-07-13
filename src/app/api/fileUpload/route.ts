@@ -1,52 +1,42 @@
 import { NextRequest, NextResponse } from "next/server";
-import { v2 as cloudinary } from "cloudinary";
+import cloudinary from '@/lib/cloudinary';
+import type { UploadApiResponse } from 'cloudinary';
 
-cloudinary.config({
-  cloud_name: process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME,
-  api_key: process.env.NEXT_PUBLIC_CLOUDINARY_API_KEY,
-  api_secret: process.env.NEXT_PUBLIC_CLOUDINARY_API_SECRET,
-});
-
-export { cloudinary };
-
-export async function POST(req: NextRequest, res: NextResponse) {
-      try {
+export async function POST(req: NextRequest) {
+  try {
     const formData = await req.formData();
     const file = formData.get("file") as File | null;
     const folderName = formData.get("folderName") as string;
 
     if (!file) {
-      NextResponse.json({
-        msg: "File not found",
-        statusCode: 404,
-      });
-    } else {
-      const bytes = await file.arrayBuffer();
-      const buffer = Buffer.from(bytes);
-      const res = await new Promise<any>((res, rej) => {
-        const uploadStream = cloudinary.uploader.upload_stream(
-          {
-            folder: folderName,
-          },
-          (error, result) => {
-            if (error) rej(error);
-            else res(result as any);
-          }
-        );
-        uploadStream.end(buffer);
-      });
-
       return NextResponse.json({
-        msg: "File uploaded to cloudinary",
-        url: res.secure_url,
-        public_id: res.public_id,
-        statusCode: 200,
-      });
+        msg: "File not found",
+      }, { status: 404 });
     }
-  } catch (error) {
-    NextResponse.json({
-      msg: "Error in fileupload route",
-      statusCode: 500,
+
+    const bytes = await file.arrayBuffer();
+    const buffer = Buffer.from(bytes);
+
+    const result = await new Promise<UploadApiResponse>((resolve, reject) => {
+      cloudinary.uploader.upload_stream(
+        { folder: folderName },
+        (error, result) => {
+          if (error || !result) reject(error);
+          else resolve(result);
+        }
+      ).end(buffer);
     });
+
+    return NextResponse.json({
+      msg: "File uploaded",
+      url: result.secure_url,
+      public_id: result.public_id,
+    }, { status: 200 });
+
+  } catch (error) {
+    console.error("Upload error:", error);
+    return NextResponse.json({
+      msg: "Error in fileupload route",
+    }, { status: 500 });
   }
 }

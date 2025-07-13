@@ -8,7 +8,7 @@ interface Props extends React.HTMLAttributes<HTMLDivElement> {
     role: string;
 }
 
-const TeamCard = ({name, imagePath, alt, role, ...props }: Props) => {
+const TeamCard = ({name, imagePath, alt, role }: Props) => {
   return (
     <div className="bg-[#1C1719] text-[#FEF6EB] min-w-[268px] h-[462px] flex flex-col rounded-[20px] pl-6 pt-6 overflow-hidden">
         <div>

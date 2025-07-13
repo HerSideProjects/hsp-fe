@@ -8,7 +8,6 @@ export async function submitRegistration(_: unknown, formData: FormData) {
   const file = formData.get("file") as File | null;
 
   let fileUrl = "";
-  let publicId = "";
 
   if (file) {
     const uploadData = new FormData();
@@ -23,7 +22,6 @@ export async function submitRegistration(_: unknown, formData: FormData) {
     if (uploadRes.ok) {
       const uploadJson = await uploadRes.json();
       fileUrl = uploadJson.url;
-      publicId = uploadJson.public_id;
     } else {
       console.error("File upload failed");
       return { success: false, message: "Failed to upload file." };
@@ -41,9 +39,9 @@ export async function submitRegistration(_: unknown, formData: FormData) {
     payment_proof: fileUrl
   };
 
-  console.log("Submitting final payload:", finalPayload);
+    console.log("Submitting final payload:", finalPayload);
 
-    const response = await fetch("https://hsp-be.vercel.app/api/user/register-sheets", {
+    await fetch("https://hsp-be.vercel.app/api/user/register", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(finalPayload),

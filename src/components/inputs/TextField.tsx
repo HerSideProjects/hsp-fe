@@ -8,7 +8,7 @@ interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
   name?: string;
 }
 
-const TextField = ({ error, label, className, placeholder, name, ...props }: Props) => {
+const TextField = ({ error, label, placeholder, name }: Props) => {
   return (
     <div className="flex flex-col gap-2 w-full">
         <p className="font-lostaMasta">{label}</p>
