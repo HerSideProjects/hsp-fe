@@ -63,3 +63,8 @@ body {
 .shadow-title {
     text-shadow: 0px 2.83px 14.13px rgba(0, 0, 0, 0.25);
   }
+
+:root {
+  --background: #1C1719;   
+  --foreground: #FEF6EB;  
+}
