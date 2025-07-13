@@ -17,7 +17,7 @@ export default function VisiMisi() {
   );
 
   return (
-    <section className="relative w-full mt-5 text-white text-center pt-16">
+    <section className="relative w-full text-white text-center py-12">
       <Image
         src="/assets/images/quote-left.png"
         alt="Left Quote"
@@ -32,7 +32,7 @@ export default function VisiMisi() {
         height={249}
         className="absolute top-0 right-0 z-0"
       />
-      <p className="text-lg text-[#000000] md:text-2xl mb-10 font-light">Core Values</p>
+      <p className="text-lg text-[#000000] md:text-3xl mb-10 font-light">Core Values</p>
       <h2 className="text-4xl md:text-6xl font-semibold mb-2" style={{ fontFamily: 'Losta Masta Medium, sans-serif' }}>
         <span className="text-[#000000]">Vision </span>
         <span className="text-[#EF3187]">Mision</span>

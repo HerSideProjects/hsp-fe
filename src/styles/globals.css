@@ -25,6 +25,12 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+@layer utilities {
+  .font-lostaMasta {
+    font-family: var(--font-losta-masta);
+  }
+}
+
 @font-face {
   font-family: 'Losta Masta Medium';
   src: url('/assets/fonts/LostaMasta-Medium.ttf') format('truetype');
@@ -38,3 +44,22 @@ body {
   font-weight: normal;
   font-style: normal;
 }
+
+@layer utilities {
+  .font-desirableCalligraphy {
+    font-family: var(--font-desirable-calligraphy);
+  }
+}
+
+.scroll-hidden {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+}
+
+.scroll-hidden::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+.shadow-title {
+    text-shadow: 0px 2.83px 14.13px rgba(0, 0, 0, 0.25);
+  }

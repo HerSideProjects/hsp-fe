@@ -1,12 +1,30 @@
 import type { Metadata } from 'next'
 import '@/styles/globals.css'
-import Navbar from '@/app/components/Navbar'
-import Footer from '@/app/components/Footer'
+import localFont from "next/font/local";
+import { Manrope } from 'next/font/google'
+import Navbar from '../components/Navbar'
+import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
   title: 'Her Side Project Frontend',
   description: 'Her Side Project Application',
 }
+
+const lostaMasta = localFont({
+  src: "./fonts/LostaMasta-Regular.ttf",
+  variable: "--font-losta-masta",
+});
+
+const desirableCalligraphy = localFont({
+  src: "./fonts/DesirableCalligraphy.ttf",
+  variable: "--font-desirable-calligraphy",
+});
+
+const manrope = Manrope({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-manrope', // penting kalau mau pakai Tailwind
+})
 
 export default function RootLayout({
   children,
@@ -15,10 +33,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-    <body className="min-h-screen flex flex-col">
-      <Navbar />
-      <main className="flex-grow">{children}</main>
-      <Footer />
+      <body className={`antialiased ${lostaMasta.variable} ${manrope.variable} ${manrope.className} ${desirableCalligraphy.variable}`} >
+        <Navbar />
+          {children}
+        <Footer />
     </body>
     </html>
   )
