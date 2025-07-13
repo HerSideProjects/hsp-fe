@@ -68,3 +68,9 @@ body {
   --background: #1C1719;   
   --foreground: #FEF6EB;  
 }
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
