@@ -5,6 +5,7 @@ export async function submitRegistration(_: unknown, formData: FormData) {
   const major = formData.get("major") as string;
   const reasons = formData.get("reason") as string;
   const interests = formData.getAll("interest") as string[];
+  const mbti = formData.get("mbti") as string;
   const file = formData.get("file") as File | null;
 
   let fileUrl = "";
@@ -34,6 +35,7 @@ export async function submitRegistration(_: unknown, formData: FormData) {
     phone_number,
     email,
     major,
+    mbti,
     reasons,
     interests,
     payment_proof: fileUrl

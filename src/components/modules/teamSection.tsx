@@ -9,14 +9,13 @@ const TeamSection = () => {
               <p className="text-2xl">Meet the minds behind the mission!</p>
             </div>
             <div className="flex gap-[28px] overflow-scroll scroll-hidden">
-              <TeamCard name="Shafira" imagePath="/assets/images/team-dummy.png" alt="Nadhira Hafez" role="Founder & President"/>
-              <TeamCard name="Shafira" imagePath="/assets/images/team-dummy.png" alt="Nadhira Hafez" role="Founder & President"/>
-              <TeamCard name="Shafira" imagePath="/assets/images/team-dummy.png" alt="Nadhira Hafez" role="Founder & President"/>
-              <TeamCard name="Shafira" imagePath="/assets/images/team-dummy.png" alt="Nadhira Hafez" role="Founder & President"/>
-              <TeamCard name="Shafira" imagePath="/assets/images/team-dummy.png" alt="Nadhira Hafez" role="Founder & President"/>
-              <TeamCard name="Shafira" imagePath="/assets/images/team-dummy.png" alt="Nadhira Hafez" role="Founder & President"/>
-              <TeamCard name="Shafira" imagePath="/assets/images/team-dummy.png" alt="Nadhira Hafez" role="Founder & President"/>
-              <TeamCard name="Shafira" imagePath="/assets/images/team-dummy.png" alt="Nadhira Hafez" role="Founder & President"/>
+              <TeamCard name="Shafira" imagePath="/assets/images/shafira.png" alt="Shafira" role="Founder & President"/>
+              <TeamCard name="Kayzaa" imagePath="/assets/images/kayza.png" alt="Kayzaa" role="Founder & Vice President"/>
+              <TeamCard name="Anisha" imagePath="/assets/images/nisha.png" alt="Anisha" role="Founder & Vice President"/>
+              <TeamCard name="Kaisa" imagePath="/assets/images/kaisa.png" alt="Kaisa" role="Lead of Project Team"/>
+              <TeamCard name="Salma" imagePath="/assets/images/salma.png" alt="Salma" role="Co-Lead of Project Team"/>
+              <TeamCard name="Nadhira" imagePath="/assets/images/nadhira.png" alt="Nadhira" role="Lead of IT Team"/>
+              <TeamCard name="Sabrina" imagePath="/assets/images/sabrina.png" alt="Sabrina" role="Co-Lead of IT Team"/>
             </div>
     </section>
     );
