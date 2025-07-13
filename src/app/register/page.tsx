@@ -37,22 +37,22 @@ const RegisterPage = () => {
 
   return (
     <div>
-      <div className="bg-[#FEF6EB] min-h-screen pt-36 px-16 flex flex-col gap-12">
-        <div className="flex gap-12">
+      <div className="bg-[#FEF6EB] min-h-screen md:pt-36 pt-32 md:px-16 px-8 flex flex-col gap-12 pb-40 md:pb-0 scroll-hidden">
+        <div className="flex md:flex-row flex-col md:gap-12">
           <div className="flex flex-col gap-4">
-            <div className="flex items-center gap-6">
+            <div className="flex md:flex-row flex-col md:items-center md:gap-6">
               <div>
                 <RingIcon/>
               </div>
-              <div className="flex flex-col text-6xl font-lostaMasta">
+              <div className="flex flex-col text-[56px] md:text-6xl font-lostaMasta">
                 <p className="text-[#1C1719]">About</p>
-                <p className="text-[#EF3187]">The Event</p>
+                <p className="text-[#EF3187] md:-mt-0 -mt-3 -mb-3 md:-mb-0">The Event</p>
               </div>
             </div>
             <div>
-              <p className="text-2xl">A space for women in STEM to slow down, create with their hands, and connect with kindred spirits. We know the grind—labs, codes, deadlines. But there’s another side of us that’s just as powerful: the one that crafts, blooms, and breathes.</p>
+              <p className="md:text-2xl text-xl">A space for women in STEM to slow down, create with their hands, and connect with kindred spirits. We know the grind—labs, codes, deadlines. But there’s another side of us that’s just as powerful: the one that crafts, blooms, and breathes.</p>
             </div>
-            <div className="flex gap-4">
+            <div className="flex md:flex-row flex-col gap-4">
               <div className="bg-[#E2F1AE] rounded-3xl p-4 w-fit">
                 <p className="text-2xl">🗓️ Saturday, 2 August 2025</p>
               </div>
@@ -61,7 +61,7 @@ const RegisterPage = () => {
               </div>
             </div>
           </div>
-          <div className="relative w-[1300px] h-[350px]">
+          <div className="relative md:w-[1300px] h-[350px]">
             <Image
               src="/assets/images/bersama-details.png"
               alt="foto bersama"
@@ -72,22 +72,22 @@ const RegisterPage = () => {
         </div>
         <div className="flex flex-col gap-4">
           <p className="font-lostaMasta text-[32px]">What You Get</p>
-          <div className="flex gap-6">
+          <div className="flex md:flex-row flex-col gap-6">
             <div className="bg-[#EF3187] rounded-[20px] p-6 text-[#FEF6EB] flex flex-col gap-1">
-              <p className="text-2xl font-lostaMasta">Workshop Bunga anjay</p>
-              <p>Workshop Session Workshop Session Lorem Ipsum aknsdjasajkdasbjkdabsjkdaskjdabsdjk</p>
+              <p className="text-2xl font-lostaMasta">Hands-On Creative Escape</p>
+              <p>Refresh your mind as our dedicated mentor guides you through crafting charming flower pipe cleaners.</p>
             </div>
             <div className="bg-[#EF3187] rounded-[20px] p-6 text-[#FEF6EB] flex flex-col gap-1">
-              <p className="text-2xl font-lostaMasta">Workshop Bunga anjay</p>
-              <p>Workshop Session Workshop Session Lorem Ipsum aknsdjasajkdasbjkdabsjkdaskjdabsdjk</p>
+              <p className="text-2xl font-lostaMasta">Connect with STEM Stars</p>
+              <p>Open conversations with inspiring mentors from diverse STEM fields. Ask your questions, share your journey, and gain insights</p>
             </div>
             <div className="bg-[#EF3187] rounded-[20px] p-6 text-[#FEF6EB] flex flex-col gap-1">
-              <p className="text-2xl font-lostaMasta">Workshop Bunga anjay</p>
-              <p>Workshop Session Workshop Session Lorem Ipsum aknsdjasajkdasbjkdabsjkdaskjdabsdjk</p>
+              <p className="text-2xl font-lostaMasta">Build Your Supportive Circle</p>
+              <p>Expand your network, share experiences, and find encouragement in a friendly, low-pressure environment.</p>
             </div>
           </div>
         </div>
-        <div className="flex justify-end">
+        <div className="flex md:justify-end justify-center">
           <div onClick={scrollToForm} className="bg-[#1C1719] text-[#FEF6EB] rounded-[10px] px-6 py-5 w-fit cursor-pointer">
             <p className="font-bold">Regist Now ↓</p>
           </div>
@@ -95,13 +95,13 @@ const RegisterPage = () => {
       </div>
       <div ref={formRef} className="min-h-screen bg-[#A6C0FF]" style={{ backgroundImage: "url('/assets/images/bg-regist.png')" }}>
         <UpperBorder/>
-        <main className="py-28 w-1/2 mx-auto flex flex-col items-center">
-          <form className="bg-[#FEF6EB] flex flex-col items-center rounded-2xl px-12 py-12 gap-6 w-full border border-[#1C1719]" onSubmit={handleSubmit}>
+        <main className="py-28 md:w-1/2 mx-auto flex flex-col items-center md:px-0 px-3">
+          <form className="bg-[#FEF6EB] flex flex-col items-center rounded-2xl md:px-12 px-6 py-12 gap-6 w-full border border-[#1C1719]" onSubmit={handleSubmit}>
               <div className="flex flex-col items-center">
                   <h1 className="font-lostaMasta text-3xl">Registration Form</h1>
                   <p>Fill it the information below, we will contacting you by WhatsApp for further information</p>
               </div>
-              <div className="flex w-full gap-6">
+              <div className="flex md:flex-row flex-col w-full gap-6">
                 <div className="w-full flex flex-col gap-6">
                   <TextField label="Name" placeholder='Fill Name, ex: Anisha' name="nama"/>
                   <TextField label="WA/ID Line" placeholder='ex: 0812345678/anishaptr' name="phone_number"/>
