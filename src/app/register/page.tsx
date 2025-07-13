@@ -95,7 +95,7 @@ const RegisterPage = () => {
       </div>
       <div ref={formRef} className="min-h-screen bg-[#A6C0FF]" style={{ backgroundImage: "url('/assets/images/bg-regist.png')" }}>
         <UpperBorder/>
-        <main className="pt-36 w-1/2 pb-36 mx-auto flex flex-col items-center">
+        <main className="py-28 w-1/2 mx-auto flex flex-col items-center">
           <form className="bg-[#FEF6EB] flex flex-col items-center rounded-2xl px-12 py-12 gap-6 w-full border border-[#1C1719]" onSubmit={handleSubmit}>
               <div className="flex flex-col items-center">
                   <h1 className="font-lostaMasta text-3xl">Registration Form</h1>

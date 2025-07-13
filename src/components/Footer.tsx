@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from 'react'
 import Image from 'next/image';
-import { FaInstagram, FaTiktok, FaWhatsapp } from 'react-icons/fa';
+import { FaInstagram, FaWhatsapp } from 'react-icons/fa';
 
 export default function Footer() {
   const scrollRef = useRef<HTMLDivElement>(null)
@@ -49,8 +49,8 @@ export default function Footer() {
           <Image
             src="/assets/images/Mask-Flower.png"
             alt="flower"
-            width={400}
-            height={400}
+            width={324}
+            height={287}
             className="object-contain"
           />
         </div>
@@ -71,8 +71,7 @@ export default function Footer() {
           <div className="flex flex-col gap-2 md:mt-auto md:items-end">
             <div className="flex items-center gap-4 text-lg">
               <a href="https://instagram.com/hersideproject.id" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
-              <a href="https://tiktok.com" aria-label="TikTok" target="_blank" rel="noopener noreferrer"><FaTiktok /></a>
-              <a href="https://whatsapp.com" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer"><FaWhatsapp /></a>
+              <a href="https://wa.me/6282249386895https://chat.whatsapp.com/HC1yFew3BTS3TT2RuqWEiS" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer"><FaWhatsapp /></a>
             </div>
             <div className="text-sm mt-2">
               Instagram &nbsp;&nbsp;|&nbsp;&nbsp; TikTok

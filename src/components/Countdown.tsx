@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import Image from "next/image";
 
-const targetDate = new Date('2025-08-01T23:59:59');
+const targetDate = new Date('2025-08-01T00:00:00');
 
 const getTimeLeft = () => {
   const now = new Date();

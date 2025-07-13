@@ -1,17 +1,14 @@
 "use client"
 
 import { useState } from "react";
+import { useRouter } from 'next/navigation'
 import Link from "next/link";
 import Image from "next/image";
 import { Menu, ArrowUpRight, X } from "lucide-react";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
-
-  const navLinks = [
-    { href: "/about", label: "About Us" },
-    { href: "https://instagram.com/hersideproject.id/", label: "Contact Us" },
-  ]
+  const router = useRouter()
 
   return (
     <>
@@ -33,15 +30,20 @@ export default function Navbar() {
 
             {/* Navigation Links */}
             <div className="hidden md:flex items-center space-x-8">
-                {navLinks.map((link) => (
                 <Link
-                    key={link.href}
-                    href={link.href}
+                    href="/about"
                     className="text-white/90 hover:text-white text-lg font-medium transition"
                 >
-                    {link.label}
+                    About Us
                 </Link>
-                ))}
+                <Link
+                  href="https://instagram.com/hersideproject.id/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white/90 hover:text-white text-lg font-medium transition"
+                >
+                  Contact Us
+                </Link>
             </div>
 
             {/* Mobile Menu Button */}
@@ -57,7 +59,10 @@ export default function Navbar() {
 
             {/* CTA Button */}
             <div className="hidden md:block">
-            <button className="h-full bg-pink-500 hover:bg-pink-600 text-white font-semibold px-6 rounded-2xl flex items-center transition shadow-lg hover:shadow-pink-500/30">
+            <button className="h-full bg-pink-500 hover:bg-pink-600 text-white font-semibold px-6 rounded-2xl flex items-center transition shadow-lg hover:shadow-pink-500/30"
+            onClick={() => {
+              router.push('/register')
+            }}>
                 Register First Event!
                 <ArrowUpRight className="ml-2 h-4 w-4" />
             </button>
@@ -95,22 +100,30 @@ export default function Navbar() {
 
             {/* Navigation Links */}
             <div className="flex flex-col space-y-4 mb-8">
-              {navLinks.map((link) => (
                 <Link
-                  key={link.href}
-                  href={link.href}
-                  className="text-white/90 hover:text-white transition-colors duration-200 text-lg font-medium py-2"
+                    href="/about"
+                    className="text-white/90 hover:text-white text-lg font-medium transition"
+                    onClick={() => setIsOpen(false)}
+                >
+                    About Us
+                </Link>
+                <Link
+                  href="https://instagram.com/hersideproject.id/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white/90 hover:text-white text-lg font-medium transition"
                   onClick={() => setIsOpen(false)}
                 >
-                  {link.label}
+                  Contact Us
                 </Link>
-              ))}
             </div>
 
             {/* CTA Button - Mobile */}
             <button
               className="bg-gradient-to-r from-pink-500 to-pink-600 hover:from-pink-600 hover:to-pink-700 text-white font-medium px-6 py-3 rounded-xl transition-all duration-200 shadow-lg w-full flex items-center justify-center"
-              onClick={() => setIsOpen(false)}
+              onClick={() => {setIsOpen(false)
+                router.push('/register')
+              }}
             >
               Register First Event!
               <ArrowUpRight className="ml-2 h-4 w-4" />
