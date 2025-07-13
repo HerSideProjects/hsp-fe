@@ -15,6 +15,7 @@ export default function Footer() {
     if (!scrollContent) return
 
     scrollContainer.appendChild(scrollContent.cloneNode(true))
+    scrollContainer.appendChild(scrollContent.cloneNode(true))
 
     const animate = () => {
       if (!scrollContainer) return
