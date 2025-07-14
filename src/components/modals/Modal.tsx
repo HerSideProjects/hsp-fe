@@ -10,7 +10,7 @@ interface Props {
   onClose?: () => void;
 }
 
-export const Modal = ({children, className, onClose, ...props} : Props) => {
+export const Modal = ({children, className, onClose} : Props) => {
   const [isOpen, setIsOpen] = useState(true);
 
   const handleClose = () => {
