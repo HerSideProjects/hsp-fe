@@ -6,8 +6,6 @@ import { MultipleSelectField } from '../../components/inputs/MultipleSelectField
 import { MediaField } from '../../components/inputs/MediaField'
 import { submitRegistration } from './actions'
 import { options } from './const'
-import Image from 'next/image'
-import { RingIcon } from '../../../public/assets/icons/RingIcon'
 import { UpperBorder } from '../../../public/assets/icons/UpperBorder'
 import { toast } from 'react-hot-toast'
 import { SelectField } from '@/components/inputs/SelectField'
