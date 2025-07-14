@@ -9,11 +9,13 @@ import { options } from './const'
 import Image from 'next/image'
 import { RingIcon } from '../../../public/assets/icons/RingIcon'
 import { UpperBorder } from '../../../public/assets/icons/UpperBorder'
+import { toast } from 'react-hot-toast'
 
 const RegisterPage = () => {
   const [selectedCategory, setSelectedCategory] = useState<string[]>([]);
   const [file, setFile] = useState<File | null>(null);
   const formRef = useRef<HTMLDivElement>(null)
+  const [loading, setLoading] = useState(false);
 
   const handleOnChangeInterest = (value: string[]) => {
     setSelectedCategory(value);
@@ -21,14 +23,24 @@ const RegisterPage = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    toast.loading('Submitting registration...', {id : "register"});
+    setLoading(true);
     const form = e.currentTarget as HTMLFormElement;
     const formData = new FormData(form);
-
     if (file) {
       formData.append("file", file);
     }
 
-    await submitRegistration(null, formData);
+    const response = await submitRegistration(null, formData);
+    setLoading(false);
+    if (response.success) {
+      toast.success(response.message, {id : "register"});
+      form.reset(); 
+      setSelectedCategory([]);
+      setFile(null);
+    } else {
+      toast.error(response.message || 'Failed to register', {id : "register"});
+    }
   };
 
   const scrollToForm = () => {
@@ -117,12 +129,13 @@ const RegisterPage = () => {
                   <SelectField
                     options={options}
                     onChange={handleOnChangeInterest}
+                    values={selectedCategory}
                   />
               </div>
               <TextField label="Spill your MBTI" placeholder='ex: INFJ' name="mbti"/>
-              <MediaField placeholder='Upload a screenshot that clearly displays the transaction details' onFileSelect={(f) => setFile(f)}/>
+              <MediaField placeholder='Upload a screenshot that clearly displays the transaction details' onFileSelect={(f) => setFile(f)} file={file}/>
               <div className="w-full">
-                <button className="bg-[#EF3187] w-full text-white text-xl font-bold py-4 rounded-2xl">Submit</button>
+                <button className={`bg-[#EF3187] w-full text-white text-xl font-bold py-4 rounded-2xl ${loading ? "bg-[#e7609d]" : ""}`} disabled={loading} >{loading ? 'Submitting...' : 'Submit'}</button>
               </div>
               <input type="hidden" name="interest" value={selectedCategory.join(",")} />
           </form>

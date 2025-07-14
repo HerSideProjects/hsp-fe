@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from "next/image"
 import Link from "next/link"
+import { LearnMoreArrow } from '../../../public/assets/icons/LearnMoreArrow';
 
 const FirstEventSection = () => {
   return (
@@ -15,12 +16,13 @@ const FirstEventSection = () => {
                 event
               </p>
             </div>
-            <p className="text-[#000000] max-w-6xl leading-relaxed md:pr-10 text-sm min-[966px]:text-base">A space for women in STEM to slow down, create with their hands, and connect with kindred spirits. We know <span className="font-bold">the grind—labs, codes, deadlines</span>. But there’s another side of us that’s just as powerful: the one that crafts, blooms, and breathes.</p>
+            <p className="text-[#000000] max-w-6xl leading-relaxed md:pr-10 text-sm min-[966px]:text-base">We're kicking things off with <span className="font-bold">a flower pipecleaner workshop</span> – a refreshing escape where you can get creative with your hands. Beyond the crafting, it's also a chance to connect with other women who share your interests.</p>
             <Link
               href="/register"
-              className="inline-block w-fit mt-4 bg-[#EF3187] text-[#FEF6EB] font-semibold px-5 py-3 min-[876px]:px-7 min-[876px]:py-5 rounded-xl transition"
+              className="flex gap-2 w-fit mt-4 bg-[#EF3187] text-[#FEF6EB] font-semibold px-5 py-3 min-[876px]:px-7 min-[876px]:py-5 rounded-xl transition"
             >
-              <p className="text-sm min-[876px]:text-base">Register First Event! ↗</p>
+              <p className="text-sm min-[876px]:text-base font-bold">Learn More</p>
+              <LearnMoreArrow />
             </Link>
         </div>
         <div className="w-full min-[876px]:flex justify-center hidden">

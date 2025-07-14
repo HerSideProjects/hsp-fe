@@ -61,20 +61,17 @@ export default function Footer() {
               <Image src="/assets/images/Icon-Black.png" alt="HerSideProject Logo" width={80} height={60} />
             </div>
             <p className="mb-1 hidden md:block">
-              A space for women in STEM to slow down, create with their hands, and connect with kindred spirits.
-              We know <strong>the grind—labs, codes, deadlines.</strong> But there&rsquo;s another side of us that&rsquo;s just as powerful:
-              the one that crafts, blooms, and breathes.
+              A space for women in STEM to explore their passions beyond the classroom or workplace — a creative playground where ideas turn into action.
             </p>
             <p className="mt-2 text-sm font-medium">© 2025 HerSideProject</p>
           </div>
 
           <div className="flex flex-col gap-2 md:mt-auto md:items-end">
             <div className="flex items-center gap-4 text-lg">
-              <a href="https://instagram.com/hersideproject.id" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
-              <a href="https://wa.me/6282249386895https://chat.whatsapp.com/HC1yFew3BTS3TT2RuqWEiS" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer"><FaWhatsapp /></a>
-            </div>
-            <div className="text-sm mt-2">
-              Instagram &nbsp;&nbsp;|&nbsp;&nbsp; TikTok
+              <a href="https://instagram.com/hersideproject.id" aria-label="Instagram" target="_blank" rel="noopener noreferrer" className="flex gap-1">
+                <FaInstagram />
+                <p className="text-xs">hersideproject.id</p>
+              </a>
             </div>
           </div>
         </div>

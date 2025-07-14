@@ -4,6 +4,7 @@ import localFont from "next/font/local";
 import { Manrope } from 'next/font/google'
 import Navbar from '../components/Navbar'
 import Footer from '@/components/Footer'
+import Provider from './Provider';
 
 export const metadata: Metadata = {
   title: 'Her Side Project Frontend',
@@ -34,9 +35,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`antialiased ${lostaMasta.variable} ${manrope.variable} ${manrope.className} ${desirableCalligraphy.variable}`} >
-        <Navbar />
-          {children}
-        <Footer />
+        <Provider>
+          <Navbar />
+            {children}
+          <Footer />
+        </Provider>
     </body>
     </html>
   )

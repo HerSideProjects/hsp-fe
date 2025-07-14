@@ -21,7 +21,7 @@ export default function Hero() {
                         Her Side <br /> Project
                     </h1>
                     <p className="text-base md:text-2xl text-white mb-6">
-                        A space for women in STEM to slow down, create with their hands, and connect with kindred spirits. We know the grind—labs, codes, deadlines. But there&rsquo;s another side of us that&rsquo;s just as powerful: the one that crafts, blooms, and breathes.
+                        A space for women in STEM to explore their passions beyond the classroom or workplace — a creative playground where ideas turn into action.
                     </p>
                 </div>
             </div>
