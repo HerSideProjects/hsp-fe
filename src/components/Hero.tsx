@@ -17,10 +17,10 @@ export default function Hero() {
                     <span className="inline-block bg-lime-100 text-gray-900 font-semibold px-3 py-1 rounded-full mb-3">
                         Girls Community
                     </span>
-                    <h1 className="text-[64px] md:text-[120px] pt-8 leading-none mb-4 text-white" style={{ fontFamily: 'Losta Masta Medium, sans-serif' }}>
+                    <h1 className="text-[64px] shadow-title md:text-[120px] pt-8 leading-none mb-4 text-[#FEF6EB]" style={{ fontFamily: 'Losta Masta Medium, sans-serif' }}>
                         Her Side <br /> Project
                     </h1>
-                    <p className="text-base md:text-2xl text-white mb-6">
+                    <p className="text-base md:text-2xl text-[#FEF6EB] mb-6">
                         A space for women in STEM to explore their passions beyond the classroom or workplace — a creative playground where ideas turn into action.
                     </p>
                 </div>
