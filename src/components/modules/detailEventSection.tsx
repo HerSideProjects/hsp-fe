@@ -26,7 +26,7 @@ const DetailEventSection = ({scrollToForm} : DetailEventSectionProps) => {
             </div>
             <div className="flex md:flex-row flex-col gap-4">
                 <div className="bg-[#E2F1AE] rounded-3xl p-4 w-fit">
-                <p className="md:text-2xl text-xl">🗓️ Saturday, 2 August 2025</p>
+                <p className="md:text-2xl text-xl">🗓️ Sunday, 3 August 2025</p>
                 </div>
                 <div className="bg-[#E2F1AE] rounded-3xl p-4 w-fit">
                 <p className="md:text-2xl text-xl">📍Kopi Nako Depok</p>
