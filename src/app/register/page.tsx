@@ -49,8 +49,8 @@ const RegisterPage = () => {
 
   return (
     <div>
-      <div className="bg-[#FEF6EB] min-h-screen md:pt-36 pt-32 md:px-16 px-8 flex flex-col gap-12 pb-40 md:pb-0 scroll-hidden">
-        <div className="flex md:flex-row flex-col md:gap-12">
+      <div className="bg-[#FEF6EB] min-h-screen md:pt-36 pt-32 md:px-16 px-8 flex flex-col gap-12 pb-40 md:pb-20 scroll-hidden">
+        <div className="flex min-[1070px]:flex-row flex-col md:gap-12">
           <div className="flex flex-col gap-4">
             <div className="flex md:flex-row flex-col md:items-center md:gap-6">
               <div>
@@ -62,7 +62,7 @@ const RegisterPage = () => {
               </div>
             </div>
             <div>
-              <p className="md:text-2xl text-xl">A space for women in STEM to slow down, create with their hands, and connect with kindred spirits. We know the grind—labs, codes, deadlines. But there’s another side of us that’s just as powerful: the one that crafts, blooms, and breathes.</p>
+              <p className="md:text-2xl text-xl max-w-5/6">We&apos;re kicking things off with a flower pipecleaner workshop – a refreshing escape where you can get creative with your hands. Beyond the crafting, it&apos;s also a chance to connect with other women who share your interests. Share your experiences, explore your passions, and ask anything you&apos;ve been wondering about in a friendly, judgment-free zone. It&apos;s truly the perfect blend of creativity and career insight!</p>
             </div>
             <div className="flex md:flex-row flex-col gap-4">
               <div className="bg-[#E2F1AE] rounded-3xl p-4 w-fit">
@@ -73,7 +73,7 @@ const RegisterPage = () => {
               </div>
             </div>
           </div>
-          <div className="relative md:w-[1300px] h-[350px]">
+          <div className="relative md:min-w-[500px] h-[350px]">
             <Image
               src="/assets/images/bersama-details.png"
               alt="foto bersama"
