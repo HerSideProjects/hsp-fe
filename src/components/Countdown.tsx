@@ -1,7 +1,6 @@
 'use client'
 
 import React, { useEffect, useState } from 'react';
-import Image from "next/image";
 import { CountdownUpperBorder } from '../../public/assets/icons/CountdownUpperBorder';
 import { CountdownLowerBorder } from '../../public/assets/icons/CountdownLowerBorder';
 

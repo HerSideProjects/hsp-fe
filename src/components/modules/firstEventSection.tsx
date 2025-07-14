@@ -16,7 +16,7 @@ const FirstEventSection = () => {
                 event
               </p>
             </div>
-            <p className="text-[#000000] max-w-6xl leading-relaxed md:pr-10 text-sm min-[966px]:text-base">We're kicking things off with <span className="font-bold">a flower pipecleaner workshop</span> – a refreshing escape where you can get creative with your hands. Beyond the crafting, it's also a chance to connect with other women who share your interests.</p>
+            <p className="text-[#000000] max-w-6xl leading-relaxed md:pr-10 text-sm min-[966px]:text-base">We&apos;re kicking things off with <span className="font-bold">a flower pipecleaner workshop</span> – a refreshing escape where you can get creative with your hands. Beyond the crafting, it&apos;s also a chance to connect with other women who share your interests.</p>
             <Link
               href="/register"
               className="flex gap-2 w-fit mt-4 bg-[#EF3187] text-[#FEF6EB] font-semibold px-5 py-3 min-[876px]:px-7 min-[876px]:py-5 rounded-xl transition"
