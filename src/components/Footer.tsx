@@ -55,7 +55,7 @@ export default function Footer() {
           />
         </div>
 
-        <div className="z-5 max-w-7xl mx-auto flex flex-col md:flex-row justify-between gap-6">
+        <div className="z-5 max-w-8xl mx-auto flex flex-col md:flex-row justify-between gap-6">
           <div className="flex-1 max-w-4xl">
             <div className="mb-2">
               <Image src="/assets/images/Icon-Black.png" alt="HerSideProject Logo" width={80} height={60} />
