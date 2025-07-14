@@ -66,9 +66,15 @@ body {
 
 :root {
   --background: #1C1719;   
-  --foreground: #FEF6EB;  
 }
 
 body {
   color: var(--background);
+}
+
+html, body {
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  background-color: #FAF1E7;
 }

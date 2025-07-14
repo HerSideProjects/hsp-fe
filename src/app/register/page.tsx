@@ -2,7 +2,7 @@
 
 import React, { useRef, useState } from 'react'
 import TextField from '../../components/inputs/TextField'
-import { SelectField } from '../../components/inputs/SelectField'
+import { MultipleSelectField } from '../../components/inputs/MultipleSelectField'
 import { MediaField } from '../../components/inputs/MediaField'
 import { submitRegistration } from './actions'
 import { options } from './const'
@@ -10,9 +10,11 @@ import Image from 'next/image'
 import { RingIcon } from '../../../public/assets/icons/RingIcon'
 import { UpperBorder } from '../../../public/assets/icons/UpperBorder'
 import { toast } from 'react-hot-toast'
+import { SelectField } from '@/components/inputs/SelectField'
 
 const RegisterPage = () => {
   const [selectedCategory, setSelectedCategory] = useState<string[]>([]);
+  const [selectedValue, setSelectedValue] = useState<string>("");
   const [file, setFile] = useState<File | null>(null);
   const formRef = useRef<HTMLDivElement>(null)
   const [loading, setLoading] = useState(false);
@@ -32,14 +34,22 @@ const RegisterPage = () => {
     }
 
     const response = await submitRegistration(null, formData);
-    setLoading(false);
     if (response.success) {
+      setLoading(false);
       toast.success(response.message, {id : "register"});
       form.reset(); 
       setSelectedCategory([]);
       setFile(null);
     } else {
-      toast.error(response.message || 'Failed to register', {id : "register"});
+      setLoading(false);
+      toast.remove("register"); 
+      if (Array.isArray(response.message)) {
+        response.message.forEach((msg: string) => {
+          toast.error(msg); 
+        });
+      } else {
+        toast.error(response.message || "Failed to register", { id: "register" });
+      }
     }
   };
 
@@ -83,7 +93,7 @@ const RegisterPage = () => {
           </div>
         </div>
         <div className="flex flex-col gap-4">
-          <p className="font-lostaMasta text-[32px]">What You Get</p>
+          <p className="font-lostaMasta text-[32px]">Benefits You&apos;ll Love:</p>
           <div className="flex md:flex-row flex-col gap-6">
             <div className="bg-[#EF3187] rounded-[20px] p-6 text-[#FEF6EB] flex flex-col gap-1">
               <p className="text-2xl font-lostaMasta">Hands-On Creative Escape</p>
@@ -120,13 +130,24 @@ const RegisterPage = () => {
                 </div>
                 <div className="w-full flex flex-col gap-6">
                   <TextField label="Email" placeholder='Fill Email, ex: anisha@gmail.com' name="email"/>
-                  <TextField label="Major" placeholder='ex: Information Systems' name="major"/>
+                  <div className="w-full flex flex-col gap-2">
+                    <p className="font-lostaMasta">Major</p>
+                    <SelectField
+                      options={[
+                        { label: "Computer Science", value: "Computer Science" },
+                        { label: "Information System", value: "Information System" },
+                      ]}
+                      value={selectedValue}
+                      onChange={(val) => setSelectedValue(val)}
+                      placeholder="ex: Information System"
+                    />
+                  </div>
                 </div>
               </div>
               <TextField label="Reason you want to join" placeholder='Please fill with the reason why u interest to join our first event :)' name="reason"/>
               <div className="w-full">
                   <p className="font-lostaMasta">Interest</p>
-                  <SelectField
+                  <MultipleSelectField
                     options={options}
                     onChange={handleOnChangeInterest}
                     values={selectedCategory}
@@ -138,6 +159,7 @@ const RegisterPage = () => {
                 <button className={`bg-[#EF3187] w-full text-white text-xl font-bold py-4 rounded-2xl ${loading ? "bg-[#e7609d]" : ""}`} disabled={loading} >{loading ? 'Submitting...' : 'Submit'}</button>
               </div>
               <input type="hidden" name="interest" value={selectedCategory.join(",")} />
+              <input type="hidden" name="major" value={selectedValue} />
           </form>
         </main>
       </div>
