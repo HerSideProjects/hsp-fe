@@ -7,8 +7,10 @@ export async function submitRegistration(_: unknown, formData: FormData) {
   const interests = formData.getAll("interest") as string[];
   const mbti = formData.get("mbti") as string;
   const file = formData.get("file") as File | null;
+  const studentFile = formData.get("student_file") as File | null;
 
   let fileUrl = "";
+  let studentProofUrl = "";
 
   if (file) {
     const uploadData = new FormData();
@@ -29,6 +31,25 @@ export async function submitRegistration(_: unknown, formData: FormData) {
     }
   }
 
+  if (studentFile) {
+    const uploadData = new FormData();
+    uploadData.append("file", studentFile);
+    uploadData.append("folderName", "hsp-student-proof");
+
+    const uploadRes = await fetch("/api/fileUpload", {
+      method: "POST",
+      body: uploadData,
+    });
+
+    if (uploadRes.ok) {
+      const uploadJson = await uploadRes.json();
+      studentProofUrl = uploadJson.url;
+    } else {
+      console.error("Student proof upload failed");
+      return { success: false, message: "Failed to upload student proof." };
+    }
+  }
+
 
   const finalPayload = {
     name,
@@ -38,7 +59,8 @@ export async function submitRegistration(_: unknown, formData: FormData) {
     mbti,
     reasons,
     interests,
-    payment_proof: fileUrl
+    payment_proof: fileUrl,
+    student_proof: studentProofUrl,
   };
   try {
      const res = await fetch("https://hsp-be.vercel.app/api/user/register", {

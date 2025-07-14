@@ -37,13 +37,6 @@ export const MediaField: React.FC<MediaFieldProps> = ({ onFileSelect, placeholde
 
   return (
     <div className="w-full flex flex-col gap-2">
-      <p className="font-lostaMasta">Payment Evidence</p>
-      <div>
-        <p>Join us for just <span className="font-bold">IDR 85,000</span>, including all your materials for the flower pipe cleaner craft! </p>
-        <p>Complete your registration by transferring the payment to:</p>
-      </div>
-      <p className="mt-3">BANK JAGO: 506270040328 ( KAISA DIAN FERDINAND )</p>
-
       <input
         type="file"
         accept="image/*"
