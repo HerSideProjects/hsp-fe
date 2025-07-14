@@ -9,7 +9,7 @@ interface DetailEventSectionProps {
 
 const DetailEventSection = ({scrollToForm} : DetailEventSectionProps) => {
   return (
-    <div className="bg-[#FEF6EB] min-h-screen md:pt-36 pt-32 md:px-16 px-8 flex flex-col gap-12 pb-40 md:pb-20 scroll-hidden">
+    <div className="bg-[#FEF6EB] min-h-screen md:pt-36 pt-32 md:px-16 px-8 flex flex-col gap-12 pb-40 md:pb-20 scroll-hidden" style={{ backgroundImage: "url('/assets/images/bg-details.png')" }}>
         <div className="flex min-[1070px]:flex-row flex-col md:gap-12">
             <div className="flex flex-col gap-4">
             <div className="flex md:flex-row flex-col md:items-center md:gap-6">
