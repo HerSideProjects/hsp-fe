@@ -36,7 +36,7 @@ export const SelectField = ({
         className="relative flex w-full rounded-lg border bg-[#FFF0DC] p-[10px] text-left"
         onClick={() => setIsOpen(!isOpen)}
       >
-        <span className="text-[#646464]">
+        <span className="text-[#39001A]">
           {value
             ? options.find((opt) => opt.value === value)?.label
             : placeholder}
