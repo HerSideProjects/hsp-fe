@@ -40,15 +40,32 @@ export async function submitRegistration(_: unknown, formData: FormData) {
     interests,
     payment_proof: fileUrl
   };
-
-    console.log("Submitting final payload:", finalPayload);
-
-    await fetch("https://hsp-be.vercel.app/api/user/register", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(finalPayload),
+  try {
+     const res = await fetch("https://hsp-be.vercel.app/api/user/register", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(finalPayload),
     });
 
-  return { success: true, message: "Registration submitted!", fileUrl };
+    if (!res.ok) {
+      const errorJson = await res.json().catch(() => ({}));
+
+      if (Array.isArray(errorJson.detail)) {
+        const messages = errorJson.detail.map((d: any) => d.msg);
+        return {
+          success: false,
+          message: messages
+        };
+      }
+      const errorMessage = errorJson.message || "Failed to submit registration.";
+      return { success: false, message: errorMessage };
+    }
+    return { success: true, message: "Registration submitted!", fileUrl };
+  } catch (err: any) {
+    return {
+      success: false,
+      message: err?.message || "Unexpected error occurred.",
+    };
+  }
 }
 

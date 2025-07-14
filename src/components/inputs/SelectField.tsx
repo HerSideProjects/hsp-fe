@@ -1,7 +1,6 @@
 "use client";
 import React, { useState } from "react";
 import { SelectArrowIcon } from "../../../public/assets/icons/SelectArrowIcon";
-import { SelectCloseIcon } from "../../../public/assets/icons/SelectCloseIcon";
 
 interface Option {
   label: string;
@@ -12,33 +11,22 @@ interface SelectFieldProps {
   options: Option[];
   placeholder?: string;
   error?: string;
-  onChange?: (selected: string[]) => void;
-  values?: string[];
+  onChange?: (selected: string) => void;
+  value?: string;
 }
 
 export const SelectField = ({
   options,
-  values = [],
-  placeholder = "Pick ur interest (can multiply)",
+  value = "",
+  placeholder = "Pick one",
   error,
   onChange,
 }: SelectFieldProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const handleToggle = (value: string) => {
-    const isSelected = values.includes(value);
-    const newSelected = isSelected
-      ? values.filter((v) => v !== value)
-      : [...values, value];
-
-
-    onChange?.(newSelected);
-    setIsOpen(!isOpen)
-  };
-
-  const handleRemoveInterest = (value: string) => {
-    const newSelected = values.filter((v) => v !== value);
-    onChange?.(newSelected);
+  const handleSelect = (selectedValue: string) => {
+    onChange?.(selectedValue);
+    setIsOpen(false);
   };
 
   return (
@@ -49,7 +37,9 @@ export const SelectField = ({
         onClick={() => setIsOpen(!isOpen)}
       >
         <span className="text-[#646464]">
-          {placeholder}
+          {value
+            ? options.find((opt) => opt.value === value)?.label
+            : placeholder}
         </span>
         <span
           className={`transition-transform duration-300 ease-in-out absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none ${
@@ -63,38 +53,12 @@ export const SelectField = ({
       {isOpen && (
         <div className="absolute z-10 mt-2 w-full rounded-md bg-white border border-gray-300 shadow-lg max-h-64 overflow-auto">
           {options.map((opt) => (
-            <label
-              key={opt.value}
-              className="flex items-center gap-2 px-4 py-2 hover:bg-gray-100 cursor-pointer"
-            >
-              <input
-                type="checkbox"
-                checked={values.includes(opt.value)}
-                onChange={() => handleToggle(opt.value)}
-                className="hidden"
-              />
-              <span>{opt.label}</span>
-            </label>
-          ))}
-        </div>
-      )}
-
-      {values.length > 0 && (
-        <div className="flex flex-wrap gap-2 mt-2">
-          {values.map((val, index) => (
             <div
-              key={index}
-              className="bg-[#E2F1AE] text-[#1C1719] p-2 rounded-lg border border-[#1C1719] w-fit text-xs"
+              key={opt.value}
+              onClick={() => handleSelect(opt.value)}
+              className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
             >
-              <div className="flex gap-1 justify-between items-center">
-                <p>{val}</p>
-                <div
-                  onClick={() => handleRemoveInterest(val)}
-                  className="cursor-pointer"
-                >
-                  <SelectCloseIcon />
-                </div>
-              </div>
+              {opt.label}
             </div>
           ))}
         </div>
@@ -104,4 +68,3 @@ export const SelectField = ({
     </div>
   );
 };
-
