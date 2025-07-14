@@ -31,6 +31,12 @@ export default function Navbar() {
             {/* Navigation Links */}
             <div className="hidden md:flex items-center space-x-8">
                 <Link
+                    href="/"
+                    className="text-white/90 hover:text-white text-lg font-medium transition"
+                >
+                    Home
+                </Link>
+                <Link
                     href="/about"
                     className="text-white/90 hover:text-white text-lg font-medium transition"
                 >
@@ -100,6 +106,13 @@ export default function Navbar() {
 
             {/* Navigation Links */}
             <div className="flex flex-col space-y-4 mb-8">
+                <Link
+                    href="/"
+                    className="text-white/90 hover:text-white text-lg font-medium transition"
+                    onClick={() => setIsOpen(false)}
+                >
+                    Home
+                </Link>
                 <Link
                     href="/about"
                     className="text-white/90 hover:text-white text-lg font-medium transition"

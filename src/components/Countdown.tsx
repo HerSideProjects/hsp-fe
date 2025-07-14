@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useEffect, useState } from 'react';
+import { useRouter } from 'next/navigation'
 import { CountdownUpperBorder } from '../../public/assets/icons/CountdownUpperBorder';
 import { CountdownLowerBorder } from '../../public/assets/icons/CountdownLowerBorder';
 
@@ -20,6 +21,7 @@ const getTimeLeft = () => {
 
 export default function Countdown() {
   const [timeLeft, setTimeLeft] = useState<{ days: number, hours: number, minutes: number, seconds: number } | null>(null);
+  const router = useRouter();
 
   useEffect(() => {
     setTimeLeft(getTimeLeft());
@@ -50,10 +52,10 @@ export default function Countdown() {
     >
         <CountdownUpperBorder/>
       <div className="px-8 py-16">
-        <h2 className="text-4xl md:text-6xl pt-5 md:pt-40 font-semibold mb-2" style={{ fontFamily: 'Losta Masta Medium, sans-serif' }}>Registration Closed</h2>
-        <p className="text-sm text-[#E2F1AE] pt-3 md:text-xl mb-10 font-light">Limited seats available, get yours now!</p>
+        <h2 className="text-4xl md:text-6xl pt-5 md:pt-15 font-semibold mb-2" style={{ fontFamily: 'Losta Masta Medium, sans-serif' }}>Registration Closes In...</h2>
+        <p className="text-sm text-[#E2F1AE] pt-3 md:text-xl mb-10 font-light">Secure your spot before it&rsquo;s gone, limited seats left!</p>
 
-        <div className="flex flex-col md:flex-row justify-center gap-6 md:gap-10 pb-5 md:pb-40">
+        <div className="flex flex-col md:flex-row justify-center gap-6 md:gap-10 pb-10 md:pb-20">
           {timeBlock(timeLeft?.days ?? 0, 'Days')}
           <div className="hidden md:flex items-center justify-center text-white text-3xl font-bold">:</div>
           {timeBlock(timeLeft?.hours ?? 0, 'Hours')}
@@ -61,6 +63,14 @@ export default function Countdown() {
           {timeBlock(timeLeft?.minutes ?? 0, 'Minutes')}
           <div className="hidden md:flex items-center justify-center text-white text-3xl font-bold">:</div>
           {timeBlock(timeLeft?.seconds ?? 0, 'Seconds')}
+        </div>
+        <div className="flex justify-center pb-3 md:pb-5">
+          <div
+            onClick={() => router.push('/register')}
+            className="flex bg-[#1C1719] text-[#FEF6EB] rounded-[10px] px-6 py-5 w-fit cursor-pointer justify-center items-center"
+          >
+            <p className="font-bold">Regist Now ↓</p>
+          </div>
         </div>
       </div>
       <CountdownLowerBorder/>
