@@ -7,8 +7,11 @@ import Footer from '@/components/Footer'
 import Provider from './Provider';
 
 export const metadata: Metadata = {
-  title: 'Her Side Project Frontend',
-  description: 'Her Side Project Application',
+  title: 'Her Side Project',
+  description: 'Her Side Project Website',
+  icons: {
+    icon: '/assets/images/Icon-Pink.png',
+  },
 }
 
 const lostaMasta = localFont({

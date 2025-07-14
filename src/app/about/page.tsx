@@ -7,7 +7,7 @@ import VisiMisi from "@/components/VisiMisi";
 export default function About() {
   return (
     <div className="min-h-screen flex flex-col bg-[#FEF6EB] z-10">
-      <main className="flex-1 pt-28 pb-24 max-w-8xl mx-auto max-w-screen flex flex-col gap-12">
+      <main className="flex-1 pt-32 pb-24 w-full mx-auto flex flex-col gap-12">
         <div className="px-8">
           <Hero />
         </div>

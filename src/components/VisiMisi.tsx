@@ -8,6 +8,7 @@ export default function VisiMisi() {
         alt="Mission Icon"
         width={w}
         height={h}
+        quality={100}
         className="mb-4 object-contain"
         />
         <p className="text-sm md:text-base font-light leading-relaxed text-left">
@@ -39,9 +40,9 @@ export default function VisiMisi() {
       </h2>
       <p className="text-[#7A7878] pt-3 px-10 md:px-50 md:text-xl mb-10 font-light">To create an inclusive and empowering space where women in STEM can explore their passions, build side projects, and grow creatively together.</p>
       <div className="flex flex-col md:flex-row justify-center px-20 gap-6 md:gap-10 pb-5 md:pb-5">
-        {missionBlock("/assets/images/tinker.png", 72, 68, "Cultivate a creative STEM community where women feel safe to tinker, build, and share their side projects.")}
-        {missionBlock("/assets/images/workshops.png", 72, 68, "Bridge STEM and hobbies through workshops, events, and online content that integrate technology, science, and creative expression.")}
-        {missionBlock("/assets/images/mentor.png", 72, 68, "Support peer learning and mentorship among women in various STEM fields, from students to professionals.")}
+        {missionBlock("/assets/images/tinker.svg", 72, 68, "Cultivate a creative STEM community where women feel safe to tinker, build, and share their side projects.")}
+        {missionBlock("/assets/images/workshops.svg", 72, 68, "Bridge STEM and hobbies through workshops, events, and online content that integrate technology, science, and creative expression.")}
+        {missionBlock("/assets/images/mentor.svg", 72, 68, "Support peer learning and mentorship among women in various STEM fields, from students to professionals.")}
       </div>
     </section>
   );

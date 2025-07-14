@@ -77,7 +77,7 @@ const RegisterPage = () => {
               </div>
             </div>
             <div>
-              <p className="md:text-2xl text-xl max-w-5/6">We&apos;re kicking things off with a flower pipecleaner workshop – a refreshing escape where you can get creative with your hands. Beyond the crafting, it&apos;s also a chance to connect with other women who share your interests. Share your experiences, explore your passions, and ask anything you&apos;ve been wondering about in a friendly, judgment-free zone. It&apos;s truly the perfect blend of creativity and career insight!</p>
+              <p className="md:text-2xl text-xl max-w-5/6">We&apos;re kicking things off with a flower pipecleaner workshop – a refreshing escape where you can get creative with your hands. Beyond the crafting, it&apos;s also a chance to connect with other women who share your interests.</p>
             </div>
             <div className="flex md:flex-row flex-col gap-4">
               <div className="bg-[#E2F1AE] rounded-3xl p-4 w-fit">
@@ -124,9 +124,9 @@ const RegisterPage = () => {
         <UpperBorder/>
         <main className="py-28 md:w-1/2 mx-auto flex flex-col items-center md:px-0 px-3">
           <form className="bg-[#FEF6EB] flex flex-col items-center rounded-2xl md:px-12 px-6 py-12 gap-6 w-full border border-[#1C1719]" onSubmit={handleSubmit}>
-              <div className="flex flex-col items-center">
+              <div className="flex flex-col items-center text-center gap-3">
                   <h1 className="font-lostaMasta text-3xl">Registration Form</h1>
-                  <p>Fill it the information below, we will contacting you by WhatsApp for further information</p>
+                  <p><b>Note:</b>  Registration for GetInside #1 is limited to <b>female Computer Science students at Universitas Indonesia.</b> Stay tuned for updates on our upcoming events &ndash; we&rsquo;ll have more opportunities open to everyone!</p>
               </div>
               <div className="flex md:flex-row flex-col w-full gap-6">
                 <div className="w-full flex flex-col gap-6">
