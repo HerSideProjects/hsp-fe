@@ -77,7 +77,7 @@ const RegisterPage = () => {
           <form className="bg-[#FEF6EB] flex flex-col items-center rounded-2xl md:px-12 px-6 py-12 gap-6 w-full border border-[#1C1719]" onSubmit={handleSubmit}>
               <div className="flex flex-col items-center text-center gap-3">
                   <h1 className="font-lostaMasta text-3xl">Registration Form</h1>
-                  <p><b>Note:</b>  Registration for GetInside #1 is limited to <b>female Computer Science students at Universitas Indonesia.</b> Stay tuned for updates on our upcoming events &ndash; we&rsquo;ll have more opportunities open to everyone!</p>
+                  <p><b>Note:</b>  Registration for GetInside #1 is limited to <b>first&ndash;year female Computer Science students at Universitas Indonesia.</b> Stay tuned for updates on our upcoming events &ndash; we&rsquo;ll have more opportunities open to everyone!</p>
               </div>
               <div className="flex md:flex-row flex-col w-full gap-6">
                 <div className="w-full flex flex-col gap-6">
