@@ -15,7 +15,8 @@ import { SelectField } from '@/components/inputs/SelectField'
 const RegisterPage = () => {
   const [selectedCategory, setSelectedCategory] = useState<string[]>([]);
   const [selectedValue, setSelectedValue] = useState<string>("");
-  const [file, setFile] = useState<File | null>(null);
+  const [fileStudentProof, setFileStudentProof] = useState<File | null>(null);
+  const [filePaymentProof, setFilePaymentProof] = useState<File | null>(null);
   const formRef = useRef<HTMLDivElement>(null)
   const [loading, setLoading] = useState(false);
 
@@ -29,8 +30,11 @@ const RegisterPage = () => {
     setLoading(true);
     const form = e.currentTarget as HTMLFormElement;
     const formData = new FormData(form);
-    if (file) {
-      formData.append("file", file);
+    if (fileStudentProof) {
+      formData.append("student_file", fileStudentProof);
+    }
+    if (filePaymentProof) {
+      formData.append("file", filePaymentProof); // default key `file` tetap dipakai kalau backend-nya belum diubah
     }
 
     const response = await submitRegistration(null, formData);
@@ -39,7 +43,8 @@ const RegisterPage = () => {
       toast.success(response.message, {id : "register"});
       form.reset(); 
       setSelectedCategory([]);
-      setFile(null);
+      setFileStudentProof(null);
+      setFilePaymentProof(null);
     } else {
       setLoading(false);
       toast.remove("register"); 
@@ -154,7 +159,20 @@ const RegisterPage = () => {
                   />
               </div>
               <TextField label="Spill your MBTI" placeholder='ex: INFJ' name="mbti"/>
-              <MediaField placeholder='Upload a screenshot that clearly displays the transaction details' onFileSelect={(f) => setFile(f)} file={file}/>
+              <div className="flex flex-col gap-2 w-full">
+                <p className="font-lostaMasta">Student Proof</p>
+                <p>Upload a screenshot of your SIAK NG to verify that you're a current UI student</p>
+                <MediaField placeholder='Upload a clear screenshot of your SIAK NG showing your student information' onFileSelect={(f) => setFileStudentProof(f)} file={fileStudentProof}/>
+              </div>
+              <div className="flex flex-col gap-2 w-full">
+                <p className="font-lostaMasta">Payment Evidence</p>
+                <div>
+                  <p>Join us for just <span className="font-bold">IDR 85,000</span>, including all your materials for the flower pipe cleaner craft! </p>
+                  <p>Complete your registration by transferring the payment to:</p>
+                </div>
+                <p className="mt-3">BANK JAGO: 506270040328 ( KAISA DIAN FERDINAND )</p>
+                <MediaField placeholder='Upload a screenshot that clearly displays the transaction details' onFileSelect={(f) => setFilePaymentProof(f)} file={filePaymentProof}/>
+              </div>
               <div className="w-full">
                 <button className={`bg-[#EF3187] w-full text-white text-xl font-bold py-4 rounded-2xl ${loading ? "bg-[#e7609d]" : ""}`} disabled={loading} >{loading ? 'Submitting...' : 'Submit'}</button>
               </div>
