@@ -51,20 +51,21 @@ export async function submitRegistration(_: unknown, formData: FormData) {
       const errorJson = await res.json().catch(() => ({}));
 
       if (Array.isArray(errorJson.detail)) {
-        const messages = errorJson.detail.map((d: any) => d.msg);
+        const messages = errorJson.detail.map((d: { msg: string }) => d.msg);
         return {
           success: false,
-          message: messages
+          message: messages,
         };
       }
       const errorMessage = errorJson.message || "Failed to submit registration.";
       return { success: false, message: errorMessage };
     }
     return { success: true, message: "Registration submitted!", fileUrl };
-  } catch (err: any) {
+  } catch (err: unknown) {
+    const errorMessage = err instanceof Error ? err.message : "Unexpected error occurred.";
     return {
       success: false,
-      message: err?.message || "Unexpected error occurred.",
+      message: errorMessage,
     };
   }
 }

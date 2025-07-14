@@ -111,7 +111,7 @@ export const MultipleSelectField = ({
               onClick={handleAddCustomOption}
               className="cursor-pointer text-sm text-[#EF3187] hover:underline px-3 py-2"
             >
-              Add "<strong>{searchTerm}</strong>"
+              Add <strong>{searchTerm}</strong>
             </div>
           )}
         </div>
