@@ -36,7 +36,7 @@ export const SelectField = ({
         className="relative flex w-full rounded-lg border bg-[#FFF0DC] p-[10px] text-left"
         onClick={() => setIsOpen(!isOpen)}
       >
-        <span className="text-[#39001A]">
+        <span className={value ? "text-[#1C1719]" : "text-[#646464]"}>
           {value
             ? options.find((opt) => opt.value === value)?.label
             : placeholder}
@@ -51,12 +51,12 @@ export const SelectField = ({
       </button>
 
       {isOpen && (
-        <div className="absolute z-10 mt-2 w-full rounded-md bg-white border border-gray-300 shadow-lg max-h-64 overflow-auto">
+        <div className="absolute z-10 mt-2 w-full rounded-md bg-[#FEF6EB] border border-[#1C1719] shadow-lg max-h-64 overflow-auto">
           {options.map((opt) => (
             <div
               key={opt.value}
               onClick={() => handleSelect(opt.value)}
-              className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
+              className="px-4 py-2 hover:bg-[#FFF0DC] cursor-pointer"
             >
               {opt.label}
             </div>
