@@ -161,7 +161,7 @@ const RegisterPage = () => {
               <TextField label="Spill your MBTI" placeholder='ex: INFJ' name="mbti"/>
               <div className="flex flex-col gap-2 w-full">
                 <p className="font-lostaMasta">Student Proof</p>
-                <p>Upload a screenshot of your SIAK NG to verify that you're a current UI student</p>
+                <p>Upload a screenshot of your SIAK NG to verify that you&apos;re a current UI student</p>
                 <MediaField placeholder='Upload a clear screenshot of your SIAK NG showing your student information' onFileSelect={(f) => setFileStudentProof(f)} file={fileStudentProof}/>
               </div>
               <div className="flex flex-col gap-2 w-full">
