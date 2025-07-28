@@ -64,14 +64,14 @@ const RegisterPage = () => {
     }
   };
 
-  // const scrollToForm = () => {
-  //   formRef.current?.scrollIntoView({ behavior: 'smooth' });
-  // };
+  const scrollToForm = () => {
+    formRef.current?.scrollIntoView({ behavior: 'smooth' });
+  };
 
   return (
     <div>
-      {/* <DetailEventSection scrollToForm={scrollToForm} /> */}
-      <DetailEventSection />
+      <DetailEventSection scrollToForm={scrollToForm} />
+      {/* hidden form */}
       <div ref={formRef} className="hidden md:hidden min-h-screen bg-[#A6C0FF]" style={{ backgroundImage: "url('/assets/images/bg-regist.png')" }}>
         <UpperBorder/>
         <main className="py-28 md:w-1/2 mx-auto flex flex-col items-center md:px-0 px-3">
