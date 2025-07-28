@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useEffect, useState } from 'react';
-// import { useRouter } from 'next/navigation'
+import { useRouter } from 'next/navigation'
 import { CountdownUpperBorder } from '../../public/assets/icons/CountdownUpperBorder';
 import { CountdownLowerBorder } from '../../public/assets/icons/CountdownLowerBorder';
 
@@ -21,7 +21,7 @@ const getTimeLeft = () => {
 
 export default function Countdown() {
   const [timeLeft, setTimeLeft] = useState<{ days: number, hours: number, minutes: number, seconds: number } | null>(null);
-  // const router = useRouter();
+  const router = useRouter();
 
   useEffect(() => {
     setTimeLeft(getTimeLeft());
@@ -65,12 +65,14 @@ export default function Countdown() {
           {timeBlock(timeLeft?.seconds ?? 0, 'Seconds')}
         </div>
         <div className="flex justify-center pb-3 md:pb-5">
-          {/* <div
+          {/* regis open */}
+          <div
             onClick={() => router.push('/register')}
-            className="flex bg-[#1C1719] text-[#FEF6EB] rounded-[10px] px-6 py-5 w-fit cursor-pointer justify-center items-center"
+            className="hidden flex bg-[#1C1719] text-[#FEF6EB] rounded-[10px] px-6 py-5 w-fit cursor-pointer justify-center items-center"
           >
             <p className="font-bold">Regist Now ↓</p>
-          </div> */}
+          </div>
+          {/* regis close */}
           <div className="bg-gray-400 text-white rounded-[10px] px-6 py-5 w-fit cursor-not-allowed">
               <p className="font-bold">Registration Closed</p>
           </div>

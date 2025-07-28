@@ -2,13 +2,12 @@ import React from 'react';
 import Image from "next/image"
 import { RingIcon } from '../../../public/assets/icons/RingIcon';
 
-// interface DetailEventSectionProps {
-//     scrollToForm: () => void;
-// }
+interface DetailEventSectionProps {
+    scrollToForm: () => void;
+}
 
 
-// const DetailEventSection = ({scrollToForm} : DetailEventSectionProps) => {
-const DetailEventSection = () => {
+const DetailEventSection = ({scrollToForm} : DetailEventSectionProps) => {
   return (
     <div className="bg-[#FEF6EB] min-h-screen md:pt-36 pt-32 md:px-16 px-8 flex flex-col gap-12 pb-40 md:pb-20 scroll-hidden" style={{ backgroundImage: "url('/assets/images/bg-details.png')" }}>
         <div className="flex min-[1070px]:flex-row flex-col md:gap-12">
@@ -60,11 +59,13 @@ const DetailEventSection = () => {
             </div>
             </div>
         </div>
-        {/* <div className="flex md:justify-end justify-center">
+        {/* regis open */}
+        <div className="hidden md:hidden flex md:justify-end justify-center">
             <div onClick={scrollToForm} className="bg-[#1C1719] text-[#FEF6EB] rounded-[10px] px-6 py-5 w-fit cursor-pointer">
             <p className="font-bold">Regist Now ↓</p>
             </div>
-        </div> */}
+        </div>
+        {/* regis close */}
         <div className="flex md:justify-end justify-center">
             <div className="bg-gray-400 text-white rounded-[10px] px-6 py-5 w-fit cursor-not-allowed">
                 <p className="font-bold">Registration Closed</p>
