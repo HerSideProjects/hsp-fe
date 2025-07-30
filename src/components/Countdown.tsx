@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation'
 import { CountdownUpperBorder } from '../../public/assets/icons/CountdownUpperBorder';
 import { CountdownLowerBorder } from '../../public/assets/icons/CountdownLowerBorder';
 
-const targetDate = new Date('2025-07-31T23:59:59');
+const targetDate = new Date('2025-08-03T09:00:00');
 
 const getTimeLeft = () => {
   const now = new Date();
@@ -52,8 +52,8 @@ export default function Countdown() {
     >
         <CountdownUpperBorder/>
       <div className="px-8 py-16">
-        <h2 className="text-4xl md:text-6xl pt-5 md:pt-15 font-semibold mb-2" style={{ fontFamily: 'Losta Masta Medium, sans-serif' }}>Registration Closes In...</h2>
-        <p className="text-sm text-[#E2F1AE] pt-3 md:text-xl mb-10 font-light">Secure your spot before it&rsquo;s gone, limited seats left!</p>
+        <h2 className="text-4xl md:text-6xl pt-5 md:pt-15 font-semibold mb-2" style={{ fontFamily: 'Losta Masta Medium, sans-serif' }}>Our First Event Kicks Off In...</h2>
+        <p className="text-sm text-[#E2F1AE] pt-3 md:text-xl mb-10 font-light">The Countdown Begins! Our First Event Starts In...</p>
 
         <div className="flex flex-col md:flex-row justify-center gap-6 md:gap-10 pb-10 md:pb-20">
           {timeBlock(timeLeft?.days ?? 0, 'Days')}
@@ -68,12 +68,12 @@ export default function Countdown() {
           {/* regis open */}
           <div
             onClick={() => router.push('/register')}
-            className="hidden flex bg-[#1C1719] text-[#FEF6EB] rounded-[10px] px-6 py-5 w-fit cursor-pointer justify-center items-center"
+            className="flex bg-[#1C1719] text-[#FEF6EB] rounded-[10px] px-6 py-5 w-fit cursor-pointer justify-center items-center"
           >
-            <p className="font-bold">Regist Now ↓</p>
+            <p className="font-bold">Learn More About the Event</p>
           </div>
           {/* regis close */}
-          <div className="bg-gray-400 text-white rounded-[10px] px-6 py-5 w-fit cursor-not-allowed">
+          <div className="hidden bg-gray-400 text-white rounded-[10px] px-6 py-5 w-fit cursor-not-allowed">
               <p className="font-bold">Registration Closed</p>
           </div>
         </div>
