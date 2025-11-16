@@ -65,11 +65,11 @@ export default function Navbar() {
 
             {/* CTA Button */}
             <div className="hidden md:block">
-            <button className="h-full bg-pink-500 hover:bg-pink-600 text-white font-semibold px-6 rounded-2xl flex items-center transition shadow-lg hover:shadow-pink-500/30"
+            <button className="h-full bg-pink-500 hover:bg-[#1C1719] text-white font-semibold px-6 rounded-2xl flex items-center transition shadow-lg cursor-pointer"
             onClick={() => {
               router.push('/register')
             }}>
-                Register First Event!
+                Register Our Event!
                 <ArrowUpRight className="ml-2 h-4 w-4" />
             </button>
             </div>
