@@ -26,9 +26,8 @@ body {
 }
 
 @layer utilities {
-  .font-lostaMasta {
-    font-family: var(--font-losta-masta);
-  }
+  .font-lostaMasta { font-family: var(--font-losta-masta); }
+  .font-lostaMastaThin { font-family: 'Losta Masta Thin'; }
 }
 
 @font-face {
@@ -42,6 +41,13 @@ body {
   font-family: 'Losta Masta Regular';
   src: url('/assets/fonts/LostaMasta-Regular.ttf') format('truetype');
   font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Losta Masta Thin';
+  src: url('/assets/fonts/LostaMasta-Thin.ttf') format('truetype');
+  font-weight: 100;
   font-style: normal;
 }
 

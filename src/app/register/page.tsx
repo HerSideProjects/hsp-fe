@@ -170,6 +170,7 @@ const RegisterPage = () => {
                       ? "bg-[#E7609D] cursor-not-allowed" 
                       : "bg-[#EF3187] hover:bg-[#1C1719] cursor-pointer"
                     }
+              
                   `}
                   disabled={loading}
                 >
