@@ -82,7 +82,7 @@ const RegisterPage = () => {
 
   const fetchRoles = async () => {
     try {
-      const res = await fetch("http://127.0.0.1:8000/api/user/roles/status");
+      const res = await fetch("https://hsp-be.vercel.app/api/user/roles/status");
       const data = await res.json();
       setRoleStatus(data);
     } finally {
