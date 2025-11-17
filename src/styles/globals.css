@@ -26,7 +26,8 @@ body {
 }
 
 @layer utilities {
-  .font-lostaMasta { font-family: var(--font-losta-masta); }
+  .font-lostaMasta { font-family: 'Losta Masta Regular'; }
+  .font-lostaMastaMedium { font-family: 'Losta Masta Medium'; }
   .font-lostaMastaThin { font-family: 'Losta Masta Thin'; }
 }
 

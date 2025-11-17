@@ -9,7 +9,7 @@ interface DetailEventSectionProps {
 
 const DetailEventSection = ({ scrollToForm }: DetailEventSectionProps) => {
     return (
-        <div className="bg-[#FEF6EB] max-w-[1440px] mx-auto min-h-screen md:pt-36 pt-32 flex flex-col gap-12">
+        <div className="bg-[#FEF6EB] w-full mx-auto min-h-screen md:pt-36 pt-32 flex flex-col gap-12">
             {/* atas */}
             <div className="flex min-[1070px]:flex-row flex-col items-center justify-between w-full overflow-x-hidden">
 
@@ -37,10 +37,10 @@ const DetailEventSection = ({ scrollToForm }: DetailEventSectionProps) => {
 
                     <div className="flex flex-col gap-4 mt-6 w-fit mx-auto">
                         <div className="flex flex-col md:flex-row gap-3 md:gap-5 md:mb-8 items-center justify-center flex-nowrap">
-                            <div className="bg-[#E2F1AE] rounded-2xl px-5 py-3 whitespace-nowrap">
+                            <div className="bg-[#E2F1AE] rounded-2xl w-full px-5 py-3 whitespace-nowrap">
                                 <p className="text-lg md:text-2xl font-medium">🗓️ Saturday, 6 December 2025</p>
                             </div>
-                            <div className="bg-[#E2F1AE] rounded-2xl px-5 py-3 whitespace-nowrap">
+                            <div className="bg-[#E2F1AE] rounded-2xl w-full px-5 py-3 whitespace-nowrap">
                                 <p className="text-lg md:text-2xl font-medium">📍Gripa Studio, Jkt</p>
                             </div>
                         </div>
@@ -48,23 +48,14 @@ const DetailEventSection = ({ scrollToForm }: DetailEventSectionProps) => {
                         <div className="w-full flex flex-col items-center relative">
 
                             {/* Price Box */}
-                            <div className="bg-[#EF3187] text-white rounded-xl border-[3px] border-dashed border-[#FFFFFF] 
-      ring-2 ring-white outline outline-4 outline-[#EF3187] 
-      py-3 w-full text-center shadow-lg z-0">
+                            <div className="bg-[#EF3187] text-white rounded-xl border-[3px] border-dashed border-[#FFFFFF] ring-2 ring-white outline outline-4 outline-[#EF3187] py-3 w-full text-center shadow-lg z-0">
                                 <p className="text-xl md:text-3xl tracking-wide text-center md:text-left md:pl-5 text-[#E2F1AE]">
                                     Only for <b>Rp179,000</b>
                                 </p>
                             </div>
 
-                            <div className="
-                                w-[315px] h-[75px] 
-                                md:w-[630px] md:h-[150px]
-                                -mt-3                
-                                md:-mt-18
-                                md:-mr-150
-                                relative z-10
-                            ">
-                                                            <Image
+                            <div className="w-[315px] h-[75px] md:w-[630px] md:h-[150px] -mt-3 md:-mt-18 md:-mr-150 relative z-10">
+                                <Image
                                     src="/assets/images/bring-you-own-matt.svg"
                                     alt="Bring Your Own Matt"
                                     fill
