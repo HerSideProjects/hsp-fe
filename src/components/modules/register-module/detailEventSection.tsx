@@ -1,77 +1,178 @@
 import React from 'react';
 import Image from "next/image"
 import { RingIcon } from '../../../../public/assets/icons/RingIcon';
+import { YogaIcon } from '../../../../public/assets/icons/YogaIcon';
 
 interface DetailEventSectionProps {
     scrollToForm: () => void;
 }
 
 
-const DetailEventSection = ({scrollToForm} : DetailEventSectionProps) => {
-  return (
-    <div className="bg-[#FEF6EB] min-h-screen md:pt-36 pt-32 md:px-16 px-8 flex flex-col gap-12 pb-40 md:pb-20 scroll-hidden" style={{ backgroundImage: "url('/assets/images/bg-details.png')" }}>
-        <div className="flex min-[1070px]:flex-row flex-col md:gap-12">
-            <div className="flex flex-col gap-4">
-            <div className="flex md:flex-row flex-col md:items-center md:gap-6">
-                <div>
-                <RingIcon/>
+const DetailEventSection = ({ scrollToForm }: DetailEventSectionProps) => {
+    return (
+        <div className="bg-[#FEF6EB] max-w-[1440px] mx-auto min-h-screen md:pt-36 pt-32 flex flex-col gap-12">
+            {/* atas */}
+            <div className="flex min-[1070px]:flex-row flex-col items-center justify-between w-full overflow-x-hidden">
+
+                {/* KIRI */}
+                <div className="relative hidden md:block w-full max-w-[377px] h-[400px] md:h-[618px] shrink-1">
+                    <Image
+                        src="/assets/images/left-img.svg"
+                        alt="Yoga Session Left"
+                        fill
+                        className="object-contain object-left"
+                    />
                 </div>
-                <div className="flex flex-col text-[56px] md:text-6xl font-lostaMasta">
-                <p className="text-[#1C1719]">About</p>
-                <p className="text-[#EF3187] md:-mt-0 -mt-3 -mb-3 md:-mb-0">The Event</p>
+
+                {/* TENGAH */}
+                <div className="flex flex-col gap-4 items-center text-center z-10 px-4">
+                    <p className="text-lg md:text-xl text-gray-600 font-medium">
+                        About the Event
+                    </p>
+
+                    <h1 className="text-[34px] md:text-5xl text-[#EF3187] leading-tight font-lostaMastaThin">
+                        A morning <span className="font-lostaMasta">to reconnect</span><br />
+                        and own your next <span className="font-lostaMasta">tech</span><br />
+                        <span className="font-lostaMasta">career move</span>
+                    </h1>
+
+                    <div className="flex flex-col gap-4 mt-6 w-fit mx-auto">
+                        <div className="flex flex-col md:flex-row gap-3 md:gap-5 md:mb-8 items-center justify-center flex-nowrap">
+                            <div className="bg-[#E2F1AE] rounded-2xl px-5 py-3 whitespace-nowrap">
+                                <p className="text-lg md:text-2xl font-medium">🗓️ Saturday, 6 December 2025</p>
+                            </div>
+                            <div className="bg-[#E2F1AE] rounded-2xl px-5 py-3 whitespace-nowrap">
+                                <p className="text-lg md:text-2xl font-medium">📍Gripa Studio, Jkt</p>
+                            </div>
+                        </div>
+
+                        <div className="w-full flex flex-col items-center relative">
+
+                            {/* Price Box */}
+                            <div className="bg-[#EF3187] text-white rounded-xl border-[3px] border-dashed border-[#FFFFFF] 
+      ring-2 ring-white outline outline-4 outline-[#EF3187] 
+      py-3 w-full text-center shadow-lg z-0">
+                                <p className="text-xl md:text-3xl tracking-wide text-center md:text-left md:pl-5 text-[#E2F1AE]">
+                                    Only for <b>Rp179,000</b>
+                                </p>
+                            </div>
+
+                            <div className="
+                                w-[315px] h-[75px] 
+                                md:w-[630px] md:h-[150px]
+                                -mt-3                
+                                md:-mt-18
+                                md:-mr-150
+                                relative z-10
+                            ">
+                                                            <Image
+                                    src="/assets/images/bring-you-own-matt.svg"
+                                    alt="Bring Your Own Matt"
+                                    fill
+                                    className="object-contain"
+                                />
+                            </div>
+
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div>
-                <p className="md:text-2xl text-xl max-w-5/6">We&apos;re kicking things off with a flower pipecleaner workshop – a refreshing escape where you can get creative with your hands. Beyond the crafting, it&apos;s also a chance to connect with other women who share your interests.</p>
-            </div>
-            <div className="flex md:flex-row flex-col gap-4">
-                <div className="bg-[#E2F1AE] rounded-3xl p-4 w-fit">
-                <p className="md:text-2xl text-xl">🗓️ Sunday, 3 August 2025</p>
+
+                {/* KANAN */}
+                <div className="relative hidden md:block w-full max-w-[377px] h-[400px] md:h-[618px] shrink-1">
+                    <Image
+                        src="/assets/images/right-img.svg"
+                        alt="Yoga Session Right"
+                        fill
+                        className="object-contain object-right"
+                    />
                 </div>
-                <div className="bg-[#E2F1AE] rounded-3xl p-4 w-fit">
-                <p className="md:text-2xl text-xl">📍Kopi Nako Depok</p>
+
+            </div>
+            {/* BAWAH */}
+            <div
+                className="flex flex-col gap-8 py-12 px-4 items-center bg-cover bg-center bg-no-repeat"
+                style={{ backgroundImage: "url('/assets/images/bg-detail-event.png')" }}
+            >
+                <div className="max-w-5xl text-center">
+                    <p className="text-[#4F5E31] text-base md:text-lg leading-relaxed font-medium">
+                        We&apos;re kicking things off with a “<span className="font-bold">Step in Her Morning</span>”, is one of the sub-events under Her Side Project, designed to start the day with Yoga which wellness-focused activities that promote mindfulness and connection among participants, followed by an interactive sharing session from various technology fields (<span className="font-bold">e.g., UI/UX Design, Product Management, Software Engineering, Artificial Intelligence, Data Engineering, Quality Assurance, Business Intelligence, or Cybersecurity</span>).
+                    </p>
                 </div>
-            </div>
-            </div>
-            <div className="relative md:min-w-[500px] h-[350px]">
-            <Image
-                src="/assets/images/bersama-details.png"
-                alt="foto bersama"
-                fill
-                className="object-contain"
-            />
+
+                <h2 className="font-lostaMasta text-[40px] md:text-6xl text-[#4F5E31] mt-4">
+                    What You&apos;ll Get
+                </h2>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mt-4">
+                    {[
+                        {
+                            icon: <YogaIcon />,
+                            title: "Yoga Session",
+                            desc: "There's will be 1-hour Yoga Session with our certified instructor"
+                        },
+                        {
+                            icon: <Image
+                                src="/assets/images/icon-chit-chat.svg"
+                                alt="Chit Chat Icon"
+                                width={60}
+                                height={60}
+                                className="object-contain"
+                            />,
+                            title: "Top-Tier Career Chit-Chat",
+                            desc: "Sharing session with tech speaker in relevant expertise"
+                        },
+                        {
+                            icon: <Image
+                                src="/assets/images/icon-light-snack.svg"
+                                alt="Chit Chat Icon"
+                                width={60}
+                                height={60}
+                                className="object-contain"
+                            />,
+                            title: "Light Snacks",
+                            desc: "Get tasty bites & refreshments to keep you energized"
+                        },
+                        {
+                            icon: <Image
+                                src="/assets/images/icon-goodie-bag.svg"
+                                alt="Chit Chat Icon"
+                                width={60}
+                                height={60}
+                                className="object-contain"
+                            />,
+                            title: "Goodie Bag",
+                            desc: "Take home exclusive merch, cute stickers & surprise treats"
+                        }
+                    ].map((item, index) => (
+                        <div key={index} className="relative w-[260px] h-[260px] flex items-center justify-center">
+                            <Image
+                                src="/assets/images/bg-benefit.svg"
+                                alt="Benefit"
+                                fill
+                                className="object-contain"
+                            />
+                            <div className="relative z-10 flex flex-col items-center text-center px-6 gap-2">
+                                <span className="text-3xl mb-1">{item.icon}</span>
+                                <p className="font-lostaMasta text-2xl text-[#1C1719] leading-none">{item.title}</p>
+                                <p className="text-16px text-[#1C1719] font-medium leading-tight">{item.desc}</p>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+                {/* regis open */}
+                <div className="flex md:justify-end justify-center">
+                    <div onClick={scrollToForm} className="bg-[#EF3187] text-[#FEF6EB] rounded-[10px] px-6 py-5 w-fit hover:bg-[#1C1719] cursor-pointer">
+                        <p className="font-bold">Regist Now ↓</p>
+                    </div>
+                </div>
+                {/* regis close */}
+                <div className="hidden md:hidden flex md:justify-end justify-center">
+                    <div className="bg-gray-400 text-white rounded-[10px] px-6 py-5 w-fit cursor-not-allowed">
+                        <p className="font-bold">Registration Closed</p>
+                    </div>
+                </div>
             </div>
         </div>
-        <div className="flex flex-col gap-4">
-            <p className="font-lostaMasta text-[32px]">Benefits You&apos;ll Love:</p>
-            <div className="flex md:flex-row flex-col gap-6">
-            <div className="bg-[#EF3187] rounded-[20px] p-6 text-[#FEF6EB] flex flex-col gap-1">
-                <p className="text-2xl font-lostaMasta">Hands-On Creative Escape</p>
-                <p>Refresh your mind as our dedicated mentor guides you through crafting charming flower pipe cleaners.</p>
-            </div>
-            <div className="bg-[#EF3187] rounded-[20px] p-6 text-[#FEF6EB] flex flex-col gap-1">
-                <p className="text-2xl font-lostaMasta">Connect with STEM Stars</p>
-                <p>Open conversations with inspiring mentors from diverse STEM fields. Ask your questions, share your journey, and gain insights</p>
-            </div>
-            <div className="bg-[#EF3187] rounded-[20px] p-6 text-[#FEF6EB] flex flex-col gap-1">
-                <p className="text-2xl font-lostaMasta">Build Your Supportive Circle</p>
-                <p>Expand your network, share experiences, and find encouragement in a friendly, low-pressure environment.</p>
-            </div>
-            </div>
-        </div>
-        {/* regis open */}
-        <div className="hidden md:hidden flex md:justify-end justify-center">
-            <div onClick={scrollToForm} className="bg-[#1C1719] text-[#FEF6EB] rounded-[10px] px-6 py-5 w-fit cursor-pointer">
-            <p className="font-bold">Regist Now ↓</p>
-            </div>
-        </div>
-        {/* regis close */}
-        <div className="flex md:justify-end justify-center">
-            <div className="bg-gray-400 text-white rounded-[10px] px-6 py-5 w-fit cursor-not-allowed">
-                <p className="font-bold">Registration Closed</p>
-            </div>
-        </div>
-    </div>
     );
 };
 

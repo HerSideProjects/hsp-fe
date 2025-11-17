@@ -1,30 +1,33 @@
 "use client"
 
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import TextField from '../../components/inputs/TextField'
-import { MultipleSelectField } from '../../components/inputs/MultipleSelectField'
 import { MediaField } from '../../components/inputs/MediaField'
 import { submitRegistration } from './actions'
-import { options } from './const'
 import { UpperBorder } from '../../../public/assets/icons/UpperBorder'
 import { toast } from 'react-hot-toast'
 import { SelectField } from '@/components/inputs/SelectField'
 import DetailEventSection from '@/components/modules/register-module/detailEventSection'
 import { Modal } from '@/components/modals/Modal'
 import { RegisterSuccess } from '../../../public/assets/icons/RegisterSuccess'
+import { MattSelector } from '../../components/inputs/MattSelector'
 
 const RegisterPage = () => {
-  const [selectedCategory, setSelectedCategory] = useState<string[]>([]);
+  type RoleStatusType = {
+    [role: string]: {
+      quota: number;
+      filled: number;
+      available: boolean;
+    };
+  };
+
   const [selectedValue, setSelectedValue] = useState<string>("");
-  const [fileStudentProof, setFileStudentProof] = useState<File | null>(null);
+  const [roleStatus, setRoleStatus] = useState<RoleStatusType>({});
   const [filePaymentProof, setFilePaymentProof] = useState<File | null>(null);
   const formRef = useRef<HTMLDivElement>(null)
   const [loading, setLoading] = useState(false);
   const [showModal, setShowModal] = useState(false);
-
-  const handleOnChangeInterest = (value: string[]) => {
-    setSelectedCategory(value);
-  };
+  const [selectedMattValue, setSelectedMattValue] = useState<"no" | "yes">("no");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -35,9 +38,6 @@ const RegisterPage = () => {
     setLoading(true);
     const form = e.currentTarget as HTMLFormElement;
     const formData = new FormData(form);
-    if (fileStudentProof) {
-      formData.append("student_file", fileStudentProof);
-    }
     if (filePaymentProof) {
       formData.append("file", filePaymentProof);
     }
@@ -45,90 +45,140 @@ const RegisterPage = () => {
     const response = await submitRegistration(null, formData);
     if (response.success) {
       setLoading(false);
-      toast.success(response.message, {id : "register"});
+      toast.success(response.message, {id : "register", duration: 5000});
       setShowModal(true);
       form.reset(); 
-      setSelectedCategory([]);
-      setFileStudentProof(null);
       setFilePaymentProof(null);
+      setSelectedValue("");
+      setSelectedMattValue("no");
+      await fetchRoles();
     } else {
       setLoading(false);
       toast.remove("register"); 
       if (Array.isArray(response.message)) {
         response.message.forEach((msg: string) => {
-          toast.error(msg); 
+          toast.error(msg, { duration: 5000 }); 
         });
       } else {
-        toast.error(response.message || "Failed to register", { id: "register" });
+        toast.error(response.message || "Failed to register", { id: "register", duration: 5000 });
       }
     }
   };
+
+  const ROLE_OPTIONS = [
+    { label: "UI/UX", value: "UI/UX" },
+    { label: "Product Management", value: "Product Management" },
+    { label: "Software Engineer", value: "Software Engineer" },
+    { label: "Quality Assurance", value: "Quality Assurance" },
+    { label: "Data Engineer", value: "Data Engineer" },
+    { label: "Artificial Intelligence", value: "Artificial Intelligence" },
+    { label: "Business Intelligence", value: "Business Intelligence" },
+    { label: "Cyber Security", value: "Cyber Security" },
+  ];
 
   const scrollToForm = () => {
     formRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
 
+  const fetchRoles = async () => {
+    try {
+      const res = await fetch("https://hsp-be.vercel.app/api/user/roles/status");
+      const data = await res.json();
+      setRoleStatus(data);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    fetchRoles();
+  }, []);
+
+
   return (
     <div>
       <DetailEventSection scrollToForm={scrollToForm} />
-      <div ref={formRef} className="hidden md:hidden min-h-screen bg-[#A6C0FF]" style={{ backgroundImage: "url('/assets/images/bg-regist.png')" }}>
+      {/* open form */}
+      <div ref={formRef} className="min-h-screen bg-[#EF3187]" style={{ backgroundImage: "url('/assets/images/bg-regist.png')" }}>
         <UpperBorder/>
-        <main className="py-28 md:w-1/2 mx-auto flex flex-col items-center md:px-0 px-3">
+        <main className="py-28 md:w-4/5 mx-auto flex flex-col items-center md:px-0 px-3">
           <form className="bg-[#FEF6EB] flex flex-col items-center rounded-2xl md:px-12 px-6 py-12 gap-6 w-full border border-[#1C1719]" onSubmit={handleSubmit}>
               <div className="flex flex-col items-center text-center gap-3">
                   <h1 className="font-lostaMasta text-3xl">Registration Form</h1>
-                  <p><b>Note:</b>  Registration for GetInside #1 is limited to <b>female Computer Science students 2025 at Universitas Indonesia.</b> Stay tuned for updates on our upcoming events &ndash; we&rsquo;ll have more opportunities open to everyone!</p>
+                  <p>Everyone&rsquo;s welcome! Open for everyone curious about building a tech career</p>
               </div>
               <div className="flex md:flex-row flex-col w-full gap-6">
                 <div className="w-full flex flex-col gap-6">
-                  <TextField label="Name" placeholder='Fill Name, ex: Anisha' name="nama"/>
-                  <TextField label="WA/ID Line" placeholder='ex: 0812345678/anishaptr' name="phone_number"/>
+                  <TextField label="Name" placeholder='ex: Bunga' name="nama"/>
+                  <TextField label="WA/ID Line" placeholder='ex: 0812345678/bungaptr' name="phone_number"/>
+                  <TextField label="University" placeholder='ex: Universitas Indonesia' name="university"/>
                 </div>
                 <div className="w-full flex flex-col gap-6">
-                  <TextField label="Email" placeholder='Fill Email, ex: anisha@gmail.com' name="email"/>
-                  <div className="w-full flex flex-col gap-2">
-                    <p className="font-lostaMasta">Major</p>
-                    <SelectField
-                      options={[
-                        { label: "Computer Science", value: "Computer Science" },
-                        { label: "Information System", value: "Information System" },
-                      ]}
-                      value={selectedValue}
-                      onChange={(val) => setSelectedValue(val)}
-                      placeholder="ex: Information System"
-                    />
-                  </div>
+                  <TextField label="Email" placeholder='ex: bunga@gmail.com' name="email"/>
+                  <TextField label="Domicile" placeholder='ex: Jakarta' name="domicile"/>
+                  <TextField label="Major" placeholder='ex: Information System' name="major"/>
                 </div>
               </div>
-              <TextField label="Reason you want to join" placeholder='Please fill with the reason why u interest to join our first event :)' name="reason"/>
-              <div className="w-full">
-                  <p className="font-lostaMasta">Interest</p>
-                  <MultipleSelectField
-                    options={options}
-                    onChange={handleOnChangeInterest}
-                    values={selectedCategory}
-                  />
-              </div>
-              <TextField label="Spill your MBTI" placeholder='ex: INFJ' name="mbti"/>
-              <div className="flex flex-col gap-2 w-full">
-                <p className="font-lostaMasta">Student Proof</p>
-                <p>Upload a screenshot of your SIAK NG to verify that you&apos;re a current UI student</p>
-                <MediaField placeholder='Upload a clear screenshot of your SIAK NG showing your student information' onFileSelect={(f) => setFileStudentProof(f)} file={fileStudentProof}/>
-              </div>
-              <div className="flex flex-col gap-2 w-full">
-                <p className="font-lostaMasta">Payment Evidence</p>
+              <div className="w-full flex flex-col gap-2">
+                <p className="font-lostaMasta">Role</p>
                 <div>
-                  <p>Join us for just <span className="font-bold">IDR 85,000</span>, including all your materials for the flower pipe cleaner craft! </p>
-                  <p>Complete your registration by transferring the payment to:</p>
+                  <p><b>Note:</b> If the role you&rsquo;re interested in is full, just WhatsApp us to join the waiting list!</p>
                 </div>
-                <p className="mt-3">BANK JAGO: 506270040328 ( KAISA DIAN FERDINAND )</p>
-                <MediaField placeholder='Upload a screenshot that clearly displays the transaction details' onFileSelect={(f) => setFilePaymentProof(f)} file={filePaymentProof}/>
+                <SelectField
+                  options={ROLE_OPTIONS.map((opt) => {
+                    const isFull = roleStatus[opt.value]?.available === false;
+                    return {
+                      label: isFull ? `${opt.label} (Full)` : opt.label,
+                      value: opt.value,
+                      disabled: isFull,
+                    };
+                  })}
+                  value={selectedValue}
+                  onChange={(val) => {
+                    if (roleStatus[val]?.available === false) return;
+                    setSelectedValue(val);
+                  }}
+                  placeholder="Select Role"
+                />
               </div>
+              <div className="flex md:flex-row flex-col w-full gap-6">
+                <div className="w-full flex flex-col gap-6">
+                  <MattSelector 
+                    value={selectedMattValue} 
+                    onChange={(v) => setSelectedMattValue(v)} />
+
+                </div>
+                <div className="w-full flex flex-col gap-6">
+                  <div className="bg-[#EF3187] rounded-[20px] p-6 text-[#FEF6EB] flex flex-col gap-1">
+                    <p>BANK JAGO</p>
+                    <p className="text-2xl"><b>506270040328</b></p>
+                    <p>a.n. KAISA DIAN FERDINAND</p>
+                  </div>
+                  <p className="text-[#646464]">Upload a screenshot that clearly displays the transaction details</p>
+                  <MediaField placeholder='Upload payment evidence' onFileSelect={(f) => setFilePaymentProof(f)} file={filePaymentProof}/>
+                </div>
+              </div>
+
+              
               <div className="w-full">
-                <button className={`bg-[#EF3187] w-full text-white text-xl font-bold py-4 rounded-2xl ${loading ? "bg-[#e7609d]" : ""}`} disabled={loading} >{loading ? 'Submitting...' : 'Submit'}</button>
+                <button
+                  className={`
+                    w-full text-white text-xl font-bold py-4 rounded-2xl 
+                    transition-all duration-200
+
+                    ${loading 
+                      ? "bg-[#E7609D] cursor-not-allowed" 
+                      : "bg-[#EF3187] hover:bg-[#1C1719] cursor-pointer"
+                    }
+              
+                  `}
+                  disabled={loading}
+                >
+                  {loading ? "Submitting..." : "Submit"}
+                </button>
               </div>
-              <input type="hidden" name="interest" value={selectedCategory.join(",")} />
-              <input type="hidden" name="major" value={selectedValue} />
+              <input type="hidden" name="role" value={selectedValue} />
+              <input type="hidden" name="matt" value={selectedMattValue} />
           </form>
         </main>
         {showModal && (
