@@ -1,5 +1,5 @@
 import React from 'react';
-import TeamCard from '../cards/TeamCard';
+import TeamCard from '../../cards/TeamCard';
 
 const TeamSection = () => {
   return (

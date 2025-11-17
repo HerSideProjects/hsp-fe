@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from "next/image"
-import { RingIcon } from '../../../public/assets/icons/RingIcon';
+import { RingIcon } from '../../../../public/assets/icons/RingIcon';
 
 interface DetailEventSectionProps {
     scrollToForm: () => void;

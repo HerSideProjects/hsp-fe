@@ -1,73 +1,72 @@
 "use client"
 
 import React, { useRef, useState } from 'react'
-import TextField from '../../components/inputs/TextField'
-import { MultipleSelectField } from '../../components/inputs/MultipleSelectField'
-import { MediaField } from '../../components/inputs/MediaField'
-import { submitRegistration } from './actions'
-import { options } from './const'
-import { UpperBorder } from '../../../public/assets/icons/UpperBorder'
 import { toast } from 'react-hot-toast'
 import { SelectField } from '@/components/inputs/SelectField'
 import DetailEventSection from '@/components/modules/register-module/detailEventSection'
 import { Modal } from '@/components/modals/Modal'
-import { RegisterSuccess } from '../../../public/assets/icons/RegisterSuccess'
+import { submitRegistration } from '@/app/register/actions'
+import { UpperBorder } from '../../../../public/assets/icons/UpperBorder'
+import TextField from '@/components/inputs/TextField'
+import { MediaField } from '@/components/inputs/MediaField'
+import { RegisterSuccess } from '../../../../public/assets/icons/RegisterSuccess'
+import { MultipleSelectField } from '@/components/inputs/MultipleSelectField'
+import { options } from '@/app/register/const'
 
-const RegisterPage = () => {
-  const [selectedCategory, setSelectedCategory] = useState<string[]>([]);
-  const [selectedValue, setSelectedValue] = useState<string>("");
-  const [fileStudentProof, setFileStudentProof] = useState<File | null>(null);
-  const [filePaymentProof, setFilePaymentProof] = useState<File | null>(null);
-  const formRef = useRef<HTMLDivElement>(null)
-  const [loading, setLoading] = useState(false);
-  const [showModal, setShowModal] = useState(false);
+export const RegisterModule = () => {
+    const [selectedCategory, setSelectedCategory] = useState<string[]>([]);
+    const [selectedValue, setSelectedValue] = useState<string>("");
+    const [fileStudentProof, setFileStudentProof] = useState<File | null>(null);
+    const [filePaymentProof, setFilePaymentProof] = useState<File | null>(null);
+    const formRef = useRef<HTMLDivElement>(null)
+    const [loading, setLoading] = useState(false);
+    const [showModal, setShowModal] = useState(false);
 
-  const handleOnChangeInterest = (value: string[]) => {
-    setSelectedCategory(value);
-  };
+    const handleOnChangeInterest = (value: string[]) => {
+        setSelectedCategory(value);
+    };
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    toast.loading('Submitting registration...', {
-      id: "register",
-      duration: Infinity,
-    });
-    setLoading(true);
-    const form = e.currentTarget as HTMLFormElement;
-    const formData = new FormData(form);
-    if (fileStudentProof) {
-      formData.append("student_file", fileStudentProof);
-    }
-    if (filePaymentProof) {
-      formData.append("file", filePaymentProof);
-    }
-
-    const response = await submitRegistration(null, formData);
-    if (response.success) {
-      setLoading(false);
-      toast.success(response.message, {id : "register"});
-      setShowModal(true);
-      form.reset(); 
-      setSelectedCategory([]);
-      setFileStudentProof(null);
-      setFilePaymentProof(null);
-    } else {
-      setLoading(false);
-      toast.remove("register"); 
-      if (Array.isArray(response.message)) {
-        response.message.forEach((msg: string) => {
-          toast.error(msg); 
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+        toast.loading('Submitting registration...', {
+        id: "register",
+        duration: Infinity,
         });
-      } else {
-        toast.error(response.message || "Failed to register", { id: "register" });
-      }
-    }
-  };
+        setLoading(true);
+        const form = e.currentTarget as HTMLFormElement;
+        const formData = new FormData(form);
+        if (fileStudentProof) {
+        formData.append("student_file", fileStudentProof);
+        }
+        if (filePaymentProof) {
+        formData.append("file", filePaymentProof);
+        }
 
-  const scrollToForm = () => {
-    formRef.current?.scrollIntoView({ behavior: 'smooth' });
-  };
+        const response = await submitRegistration(null, formData);
+        if (response.success) {
+        setLoading(false);
+        toast.success(response.message, {id : "register"});
+        setShowModal(true);
+        form.reset(); 
+        setSelectedCategory([]);
+        setFileStudentProof(null);
+        setFilePaymentProof(null);
+        } else {
+        setLoading(false);
+        toast.remove("register"); 
+        if (Array.isArray(response.message)) {
+            response.message.forEach((msg: string) => {
+            toast.error(msg); 
+            });
+        } else {
+            toast.error(response.message || "Failed to register", { id: "register" });
+        }
+        }
+    };
 
+    const scrollToForm = () => {
+        formRef.current?.scrollIntoView({ behavior: 'smooth' });
+    };
   return (
     <div>
       <DetailEventSection scrollToForm={scrollToForm} />
@@ -146,5 +145,3 @@ const RegisterPage = () => {
     </div>
   )
 }
-
-export default RegisterPage

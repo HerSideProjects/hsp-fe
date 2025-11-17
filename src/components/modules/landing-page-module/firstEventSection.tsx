@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from "next/image"
 import Link from "next/link"
-import { LearnMoreArrow } from '../../../public/assets/icons/LearnMoreArrow';
+import { LearnMoreArrow } from '../../../../public/assets/icons/LearnMoreArrow';
 
 const FirstEventSection = () => {
   return (

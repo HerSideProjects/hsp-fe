@@ -2,8 +2,8 @@
 
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation'
-import { CountdownUpperBorder } from '../../public/assets/icons/CountdownUpperBorder';
-import { CountdownLowerBorder } from '../../public/assets/icons/CountdownLowerBorder';
+import { CountdownUpperBorder } from '../../../../public/assets/icons/CountdownUpperBorder';
+import { CountdownLowerBorder } from '../../../../public/assets/icons/CountdownLowerBorder';
 
 const targetDate = new Date('2025-08-03T09:00:00');
 

@@ -1,6 +1,6 @@
-import Hero from "@/components/Hero";
-import TeamSection from "@/components/modules/teamSection";
-import VisiMisi from "@/components/VisiMisi";
+import Hero from "@/components/modules/landing-page-module/Hero";
+import TeamSection from "@/components/modules/about-us-module/teamSection";
+import VisiMisi from "@/components/modules/about-us-module/VisiMisi";
 
 
 
