@@ -1,4 +1,4 @@
-import Hero from "@/components/modules/landing-page-module/Hero";
+import Hero from "@/components/modules/landing-page-module/sections/Hero";
 import TeamSection from "@/components/modules/about-us-module/teamSection";
 import VisiMisi from "@/components/modules/about-us-module/VisiMisi";
 

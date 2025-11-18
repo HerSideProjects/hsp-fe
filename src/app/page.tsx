@@ -1,7 +1,3 @@
-
-import Countdown from "@/components/modules/landing-page-module/Countdown";
-import Hero from "@/components/modules/landing-page-module/Hero";
-import FirstEventSection from "@/components/modules/landing-page-module/firstEventSection";
 import { LandingPageModule } from "@/components/modules/landing-page-module/landing-page";
 
 export default function Home() {

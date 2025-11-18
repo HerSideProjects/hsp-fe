@@ -17,8 +17,8 @@ export default function Navbar() {
             {/* Navbar Hitam */}
             <div className="flex flex-1 items-center justify-between bg-black/90 backdrop-blur-md rounded-2xl shadow-xl border border-white/10 px-8 h-20">
             {/* Logo */}
-            <Link href="/" className="flex items-center space-x-2">
-                <div className="w-16 h-16 relative -my-1">
+            <Link href="/" className="flex items-center space-x-2 group">
+                <div className="w-16 h-16 relative -my-1 transition-transform duration-300 ease-in-out group-hover:scale-110">
                 <Image
                     src="/assets/images/Icon.png"
                     alt="Her Side Project"
@@ -32,13 +32,13 @@ export default function Navbar() {
             <div className="hidden md:flex items-center space-x-8">
                 <Link
                     href="/"
-                    className="text-white/90 hover:text-white text-lg font-medium transition"
+                    className="text-white/90 hover:text-white text-lg font-medium transition-all duration-300 hover:scale-105"
                 >
                     Home
                 </Link>
                 <Link
                     href="/about"
-                    className="text-white/90 hover:text-white text-lg font-medium transition"
+                    className="text-white/90 hover:text-white text-lg font-medium transition-all duration-300 hover:scale-105"
                 >
                     About Us
                 </Link>
@@ -46,7 +46,7 @@ export default function Navbar() {
                   href="https://instagram.com/hersideproject.id/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-white/90 hover:text-white text-lg font-medium transition"
+                  className="text-white/90 hover:text-white text-lg font-medium transition-all duration-300 hover:scale-105"
                 >
                   Contact Us
                 </Link>
@@ -65,12 +65,12 @@ export default function Navbar() {
 
             {/* CTA Button */}
             <div className="hidden md:block">
-            <button className="h-full bg-pink-500 hover:bg-[#1C1719] text-white font-semibold px-6 rounded-2xl flex items-center transition shadow-lg cursor-pointer"
+            <button className="h-full bg-pink-500 text-white font-semibold px-6 rounded-2xl flex items-center transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-xl hover:shadow-pink-500/50 shadow-lg cursor-pointer group"
             onClick={() => {
               router.push('/register')
             }}>
                 Register Our Event!
-                <ArrowUpRight className="ml-2 h-4 w-4" />
+                <ArrowUpRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
             </button>
             </div>
         </div>

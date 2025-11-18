@@ -1,5 +1,5 @@
 import React from 'react'
-import Hero from '../landing-page-module/Hero'
+import Hero from '../landing-page-module/sections/Hero'
 import VisiMisi from '@/components/modules/about-us-module/VisiMisi'
 import TeamSection from './teamSection'
 
