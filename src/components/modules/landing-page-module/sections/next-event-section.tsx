@@ -1,12 +1,12 @@
 import Link from 'next/link'
 import React from 'react'
 import Image from "next/image"
-import { NextEventTitle } from '../../../../../public/assets/icons/next-event/next-event-title'
+import { NextEventTitle } from '../../../../../public/assets/images/next-event-vol2/next-event-title'
 import { LearnMoreArrow } from '../../../../../public/assets/icons/LearnMoreArrow'
 
 export const NextEventSection = () => {
   return (
-    <section className="relative bg-[#FEF6EB] bg-cover bg-center border border-[#669C46] rounded-3xl text-white overflow-hidden" style={{ backgroundImage: "url('/assets/images/bg-next-event.png')" }}>
+    <section className="mx-8 relative bg-[#FEF6EB] bg-cover bg-center border border-[#669C46] rounded-3xl text-white overflow-hidden" style={{ backgroundImage: "url('/assets/images/next-event-vol2/bg-next-event.png')" }}>
     <div className="flex rounded-[20px]">
         <div className="flex flex-col w-full">
             <div>
@@ -27,14 +27,14 @@ export const NextEventSection = () => {
             <div className="absolute right-0 min-[524px]:bottom-[175px] bottom-28 min-[1291px]:w-[684px] min-[1062px]:w-[584px] min-[524px]:w-[484px] w-[300px]">
                 <div className="relative w-full h-full">
                     <Image
-                        src={"/assets/images/text-background.png"}
+                        src={"/assets/images/next-event-vol2/text-background.png"}
                         alt={"Foto Bersama"}
                         width={795}
                         height={458}
                         className="w-full h-auto object-contain"
                         priority
                     />
-                    <p className="text-[#475516] absolute inset-0 justify-end rotate-[1.64deg] text-right min-[1291px]:text-2xl min-[1062px]:text-xl min-[524px]:text-base text-xs min-[1291px]:leading-[37px] min-[524px]:leading-8 min-[524px]:px-7 px-3 min-[1291px]:pt-32 min-[1062px]:pt-28 min-[524px]:pt-20 pt-14">We're kicking things off with a "Step in Her Morning", designed to <span className="font-bold">start the day with Yoga</span> which wellness-focused activities that promote mindfulness and connection among participants, followed by an interactive <span className="font-bold">sharing session from various technology fields</span></p>
+                    <p className="text-[#475516] absolute inset-0 justify-end rotate-[1.64deg] text-right min-[1291px]:text-2xl min-[1062px]:text-xl min-[524px]:text-base text-xs min-[1291px]:leading-[37px] min-[524px]:leading-8 min-[524px]:px-7 px-3 min-[1291px]:pt-32 min-[1062px]:pt-28 min-[524px]:pt-20 pt-14">We&apos;re kicking things off with a &quot;Step in Her Morning&quot;, designed to <span className="font-bold">start the day with Yoga</span> which wellness-focused activities that promote mindfulness and connection among participants, followed by an interactive <span className="font-bold">sharing session from various technology fields</span></p>
                 </div>
             </div>
             <Link

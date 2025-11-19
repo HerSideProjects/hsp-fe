@@ -1,4 +1,4 @@
-import { IconInterface } from "./type";
+import { IconInterface } from "../images/type";
 
 export const CountdownUpperBorder = ({ width = 20, height = 32, className }: IconInterface) => {
     return (

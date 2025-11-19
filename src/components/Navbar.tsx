@@ -3,8 +3,8 @@
 import { useState } from "react";
 import { useRouter } from 'next/navigation'
 import Link from "next/link";
-import Image from "next/image";
 import { Menu, ArrowUpRight, X } from "lucide-react";
+import { WhiteLogo } from "../../public/assets/images/logo/logo-white";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
@@ -18,13 +18,8 @@ export default function Navbar() {
             <div className="flex flex-1 items-center justify-between bg-black/90 backdrop-blur-md rounded-2xl shadow-xl border border-white/10 px-8 h-20">
             {/* Logo */}
             <Link href="/" className="flex items-center space-x-2 group">
-                <div className="w-16 h-16 relative -my-1 transition-transform duration-300 ease-in-out group-hover:scale-110">
-                <Image
-                    src="/assets/images/Icon.png"
-                    alt="Her Side Project"
-                    fill
-                    className="object-contain rounded-full"
-                />
+                <div className="relative transition-transform duration-300 ease-in-out group-hover:scale-110">
+                  <WhiteLogo className="-my-2 w-16 h-16" />
                 </div>
             </Link>
 
@@ -65,7 +60,7 @@ export default function Navbar() {
 
             {/* CTA Button */}
             <div className="hidden md:block">
-            <button className="h-full bg-pink-500 text-white font-semibold px-6 rounded-2xl flex items-center transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-xl hover:shadow-pink-500/50 shadow-lg cursor-pointer group"
+            <button className="h-full bg-pink-500 text-white font-semibold px-6 rounded-2xl flex items-center transition-all duration-300 ease-in-out hover:scale-102 hover:shadow-xl hover:shadow-pink-500/50 shadow-lg cursor-pointer group"
             onClick={() => {
               router.push('/register')
             }}>
@@ -87,13 +82,7 @@ export default function Navbar() {
             {/* Close Button */}
             <div className="flex justify-between items-center mb-8">
               <Link href="/" onClick={() => setIsOpen(false)}>
-                <Image
-                  src="/assets/images/Icon.png"
-                  alt="Her Side Project Logo"
-                  width={80}
-                  height={48}
-                  priority
-                />
+                <WhiteLogo/>
               </Link>
               <button
                 onClick={() => setIsOpen(false)}

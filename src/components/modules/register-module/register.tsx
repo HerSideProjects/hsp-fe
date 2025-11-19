@@ -3,7 +3,7 @@
 import React, { useRef, useState } from 'react'
 import { toast } from 'react-hot-toast'
 import { SelectField } from '@/components/inputs/SelectField'
-import DetailEventSection from '@/components/modules/register-module/detailEventSection'
+import DetailEventSection from '@/components/modules/register-module/detail-event-section'
 import { Modal } from '@/components/modals/Modal'
 import { submitRegistration } from '@/app/register/actions'
 import { UpperBorder } from '../../../../public/assets/icons/UpperBorder'

@@ -51,7 +51,7 @@ export default function Countdown() {
 
   return (
     <section
-      className="relative mt-12 bg-[#EF3187] text-white text-center rounded-3xl overflow-hidden"
+      className="mx-8 relative mt-12 bg-[#EF3187] text-white text-center rounded-3xl overflow-hidden"
       style={{ backgroundImage: "url('/assets/images/pattern.png')" }}
     >
         <CountdownUpperBorder/>

@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from "next/image"
-import { RingIcon } from '../../../../public/assets/icons/RingIcon';
 import { YogaIcon } from '../../../../public/assets/icons/YogaIcon';
+import { BringYourOwnMatt } from '../../../../public/assets/images/event-detail-vol2/bring-your-own-matt';
 
 interface DetailEventSectionProps {
     scrollToForm: () => void;
@@ -10,14 +10,14 @@ interface DetailEventSectionProps {
 
 const DetailEventSection = ({ scrollToForm }: DetailEventSectionProps) => {
     return (
-        <div className="bg-[#FEF6EB] max-w-[1440px] mx-auto min-h-screen md:pt-36 pt-32 flex flex-col gap-12">
+        <div className="bg-[#FEF6EB] mx-auto min-h-screen md:pt-36 pt-32 flex flex-col gap-12">
             {/* atas */}
             <div className="flex min-[1070px]:flex-row flex-col items-center justify-between w-full overflow-x-hidden">
 
                 {/* KIRI */}
                 <div className="relative hidden md:block w-full max-w-[377px] h-[400px] md:h-[618px] shrink-1">
                     <Image
-                        src="/assets/images/left-img.svg"
+                        src="/assets/images/event-detail-vol2/left-img.svg"
                         alt="Yoga Session Left"
                         fill
                         className="object-contain object-left"
@@ -50,7 +50,7 @@ const DetailEventSection = ({ scrollToForm }: DetailEventSectionProps) => {
 
                             {/* Price Box */}
                             <div className="bg-[#EF3187] text-white rounded-xl border-[3px] border-dashed border-[#FFFFFF] 
-      ring-2 ring-white outline outline-4 outline-[#EF3187] 
+      ring-2 ring-white outline-4 outline-[#EF3187] 
       py-3 w-full text-center shadow-lg z-0">
                                 <p className="text-xl md:text-3xl tracking-wide text-center md:text-left md:pl-5 text-[#E2F1AE]">
                                     Only for <b>Rp179,000</b>
@@ -65,12 +65,7 @@ const DetailEventSection = ({ scrollToForm }: DetailEventSectionProps) => {
                                 md:-mr-150
                                 relative z-10
                             ">
-                                                            <Image
-                                    src="/assets/images/bring-you-own-matt.svg"
-                                    alt="Bring Your Own Matt"
-                                    fill
-                                    className="object-contain"
-                                />
+                                <BringYourOwnMatt />
                             </div>
 
                         </div>
@@ -80,7 +75,7 @@ const DetailEventSection = ({ scrollToForm }: DetailEventSectionProps) => {
                 {/* KANAN */}
                 <div className="relative hidden md:block w-full max-w-[377px] h-[400px] md:h-[618px] shrink-1">
                     <Image
-                        src="/assets/images/right-img.svg"
+                        src="/assets/images/event-detail-vol2/right-img.svg"
                         alt="Yoga Session Right"
                         fill
                         className="object-contain object-right"
@@ -91,7 +86,7 @@ const DetailEventSection = ({ scrollToForm }: DetailEventSectionProps) => {
             {/* BAWAH */}
             <div
                 className="flex flex-col gap-8 py-12 px-4 items-center bg-cover bg-center bg-no-repeat"
-                style={{ backgroundImage: "url('/assets/images/bg-detail-event.png')" }}
+                style={{ backgroundImage: "url('/assets/images/event-detail-vol2/bg-detail-event.png')" }}
             >
                 <div className="max-w-5xl text-center">
                     <p className="text-[#4F5E31] text-base md:text-lg leading-relaxed font-medium">
@@ -112,7 +107,7 @@ const DetailEventSection = ({ scrollToForm }: DetailEventSectionProps) => {
                         },
                         {
                             icon: <Image
-                                src="/assets/images/icon-chit-chat.svg"
+                                src="/assets/images/event-detail-vol2/icon-chit-chat.svg"
                                 alt="Chit Chat Icon"
                                 width={60}
                                 height={60}
@@ -123,7 +118,7 @@ const DetailEventSection = ({ scrollToForm }: DetailEventSectionProps) => {
                         },
                         {
                             icon: <Image
-                                src="/assets/images/icon-light-snack.svg"
+                                src="/assets/images/event-detail-vol2/icon-light-snack.svg"
                                 alt="Chit Chat Icon"
                                 width={60}
                                 height={60}
@@ -134,7 +129,7 @@ const DetailEventSection = ({ scrollToForm }: DetailEventSectionProps) => {
                         },
                         {
                             icon: <Image
-                                src="/assets/images/icon-goodie-bag.svg"
+                                src="/assets/images/event-detail-vol2/icon-goodie-bag.svg"
                                 alt="Chit Chat Icon"
                                 width={60}
                                 height={60}
@@ -146,7 +141,7 @@ const DetailEventSection = ({ scrollToForm }: DetailEventSectionProps) => {
                     ].map((item, index) => (
                         <div key={index} className="relative w-[260px] h-[260px] flex items-center justify-center">
                             <Image
-                                src="/assets/images/bg-benefit.svg"
+                                src="/assets/images/event-detail-vol2/bg-benefit.svg"
                                 alt="Benefit"
                                 fill
                                 className="object-contain"
