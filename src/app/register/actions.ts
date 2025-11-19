@@ -3,14 +3,13 @@ export async function submitRegistration(_: unknown, formData: FormData) {
   const phone_number = formData.get("phone_number") as string;
   const email = formData.get("email") as string;
   const major = formData.get("major") as string;
-  const reasons = formData.get("reason") as string;
-  const interests = formData.getAll("interest") as string[];
-  const mbti = formData.get("mbti") as string;
+  const domicile = formData.get("domicile") as string;
+  const university = formData.get("university") as string;
+  const role = formData.get("role") as string;
+  const matt = formData.get("matt") as string;
   const file = formData.get("file") as File | null;
-  const studentFile = formData.get("student_file") as File | null;
 
   let fileUrl = "";
-  let studentProofUrl = "";
 
   if (file) {
     const uploadData = new FormData();
@@ -31,37 +30,16 @@ export async function submitRegistration(_: unknown, formData: FormData) {
     }
   }
 
-  if (studentFile) {
-    const uploadData = new FormData();
-    uploadData.append("file", studentFile);
-    uploadData.append("folderName", "hsp-student-proof");
-
-    const uploadRes = await fetch("/api/fileUpload", {
-      method: "POST",
-      body: uploadData,
-    });
-
-    if (uploadRes.ok) {
-      const uploadJson = await uploadRes.json();
-      studentProofUrl = uploadJson.url;
-    } else {
-      console.error("Student proof upload failed");
-      return { success: false, message: "Failed to upload student proof." };
-    }
-  }
-
-
   const finalPayload = {
     name,
     phone_number,
     email,
+    domicile,
+    university,
     major,
-    mbti,
-    reasons,
-    interests,
-    payment_proof: fileUrl,
-    student_proof: studentProofUrl,
-  };
+    role,
+    matt,
+    payment_proof: fileUrl,  };
   try {
      const res = await fetch("https://hsp-be.vercel.app/api/user/register", {
       method: "POST",

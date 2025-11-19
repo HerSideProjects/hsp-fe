@@ -1,4 +1,4 @@
-import { IconInterface } from "./type";
+import { IconInterface } from "../images/type";
 export const RingIcon = ({ width = 24, height = 24, className }: IconInterface) => {
     return (
     <svg width="153" height="153" viewBox="0 0 153 153" fill="none" xmlns="http://www.w3.org/2000/svg">

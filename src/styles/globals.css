@@ -64,6 +64,10 @@ body {
     text-shadow: 0px 2.83px 14.13px rgba(0, 0, 0, 0.25);
   }
 
+.shadow-previous-event {
+    text-shadow: 0px 3.01px 3.01px rgba(0, 0, 0, 0.25);
+}
+
 :root {
   --background: #1C1719;   
 }

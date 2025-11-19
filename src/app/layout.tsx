@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   title: 'Her Side Project',
   description: 'Her Side Project Website',
   icons: {
-    icon: '/assets/images/Icon-Pink.png',
+    icon: '/assets/images/logo/logo-pink.png',
   },
 }
 
