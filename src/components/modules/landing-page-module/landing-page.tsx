@@ -3,7 +3,7 @@ import { NextEventSection } from './sections/next-event-section'
 import { PreviousEvent } from './sections/previous-event'
 import Review from './sections/review'
 import Hero from './sections/hero'
-import Countdown from './sections/countdown'
+import Countdown from './sections/Countdown'
 
 
 export const LandingPageModule = () => {
