@@ -11,6 +11,7 @@ import DetailEventSection from '@/components/modules/register-module/detail-even
 import { Modal } from '@/components/modals/Modal'
 import { RegisterSuccess } from '../../../public/assets/icons/RegisterSuccess'
 import { MattSelector } from '../../components/inputs/MattSelector'
+import { ROLE_OPTIONS } from './const'
 
 const RegisterPage = () => {
   type RoleStatusType = {
@@ -64,17 +65,6 @@ const RegisterPage = () => {
       }
     }
   };
-
-  const ROLE_OPTIONS = [
-    { label: "UI/UX", value: "UI/UX" },
-    { label: "Product Management", value: "Product Management" },
-    { label: "Software Engineer", value: "Software Engineer" },
-    { label: "Quality Assurance", value: "Quality Assurance" },
-    { label: "Data Engineer", value: "Data Engineer" },
-    { label: "Artificial Intelligence", value: "Artificial Intelligence" },
-    { label: "Business Intelligence", value: "Business Intelligence" },
-    { label: "Cyber Security", value: "Cyber Security" },
-  ];
 
   const scrollToForm = () => {
     formRef.current?.scrollIntoView({ behavior: 'smooth' });

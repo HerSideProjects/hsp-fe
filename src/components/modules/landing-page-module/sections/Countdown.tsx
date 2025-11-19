@@ -72,7 +72,7 @@ export default function Countdown() {
           {/* regis open */}
           <div
             onClick={() => router.push('/register')}
-            className="flex bg-[#1C1719] text-[#FEF6EB] rounded-[10px] px-6 py-5 w-fit cursor-pointer justify-center items-center"
+            className="flex bg-[#1C1719] text-[#FEF6EB] rounded-[10px] px-6 py-5 w-fit cursor-pointer justify-center items-center transition-all duration-300 ease-in-out hover:scale-102 hover:shadow-md hover:shadow-[#1C1719]/50"
           >
             <p className="font-bold">Learn More About the Event</p>
           </div>
