@@ -64,7 +64,7 @@ const DetailEventSection = ({ scrollToForm }: DetailEventSectionProps) => {
                 </div>
 
                 {/* KANAN */}
-                <div className="relative hidden lg:block lg:block w-full max-w-[377px] h-[400px] lg:h-[618px] shrink">
+                <div className="relative hidden lg:block w-full max-w-[377px] h-[400px] lg:h-[618px] shrink">
                     <Image
                         src="/assets/images/event-detail-vol2/right-img.png"
                         alt="Yoga Session Right"

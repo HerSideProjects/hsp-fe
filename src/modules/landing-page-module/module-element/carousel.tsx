@@ -100,8 +100,8 @@ export const Carousel = ({ images }: CarouselProps) => {
               <div
                 key={index}
                 onClick={() => updateCarousel(index)}
-                className={`absolute md:w-[520px] w-[320px] h-[280px] md:h-[450px] transition-all duration-600 ${
-                  position === 'hidden' ? 'opacity-0 pointer-events-none' : ''
+                className={`absolute md:w-[520px] w-[320px] h-[280px] md:h-[450px] ${
+                  position === 'hidden' ? 'opacity-0 pointer-events-none transition-none' : 'transition-all duration-600'
                 }`}
                 style={{
                   transform: position === 'center'
@@ -124,6 +124,8 @@ export const Carousel = ({ images }: CarouselProps) => {
                     alt={`Event photo ${index + 1}`}
                     fill
                     className={`object-cover transition-all duration-300`}
+                    priority={position === 'center'}
+                    loading={position === 'center' ? undefined : 'lazy'}
                   />
                 </div>
               </div>
