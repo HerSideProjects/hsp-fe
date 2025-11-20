@@ -12,7 +12,7 @@ export default function Navbar() {
 
   return (
     <>
-    <nav className="fixed top-4 left-1/2 -translate-x-1/2 w-[100%] max-w-8xl z-50 px-8">
+    <nav className="fixed top-4 left-1/2 -translate-x-1/2 w-full max-w-8xl z-50 px-8">
         <div className="flex items-stretch gap-2">
             {/* Navbar Hitam */}
             <div className="flex flex-1 items-center justify-between bg-black/90 backdrop-blur-md rounded-2xl shadow-xl border border-white/10 px-8 h-20">
@@ -122,12 +122,12 @@ export default function Navbar() {
 
             {/* CTA Button - Mobile */}
             <button
-              className="bg-gradient-to-r from-pink-500 to-pink-600 hover:from-pink-600 hover:to-pink-700 text-white font-medium px-6 py-3 rounded-xl transition-all duration-200 shadow-lg w-full flex items-center justify-center"
+              className="bg-linear-to-r from-pink-500 to-pink-600 hover:from-pink-600 hover:to-pink-700 text-white font-medium px-6 py-3 rounded-xl transition-all duration-200 shadow-lg w-full flex items-center justify-center"
               onClick={() => {setIsOpen(false)
                 router.push('/register')
               }}
             >
-              Register First Event!
+              Register Our Event!
               <ArrowUpRight className="ml-2 h-4 w-4" />
             </button>
           </div>

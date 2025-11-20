@@ -1,0 +1,10 @@
+# Allow all crawlers
+User-agent: *
+Allow: /
+
+# Block crawlers from these paths
+Disallow: /api/
+Disallow: /register
+
+# Sitemap location
+Sitemap: https://hersideproject.vercel.app/sitemap.xml
