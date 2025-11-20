@@ -1,5 +1,5 @@
 import React from 'react'
-import { TitleBackground } from '../../../../../public/assets/images/hero/bg-title'
+import { TitleBackground } from '../../../../public/assets/images/hero/bg-title'
 
 export const AboutUsHero = () => {
   return (
