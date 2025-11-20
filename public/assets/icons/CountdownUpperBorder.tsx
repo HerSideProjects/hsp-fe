@@ -3,7 +3,7 @@ import { IconInterface } from "../images/type";
 export const CountdownUpperBorder = ({ width = 20, height = 32, className }: IconInterface) => {
     return (
     <svg width="100%"
-      height="auto" viewBox="0 0 1360 51" fill="none" xmlns="http://www.w3.org/2000/svg" className="-mt-1">
+      viewBox="0 0 1360 51" fill="none" xmlns="http://www.w3.org/2000/svg" className="-mt-1" preserveAspectRatio="xMidYMid meet">
     <path d="M50 50.9032C22.3858 50.9032 0 28.5174 0 0.903198H100C100 28.5174 77.6142 50.9032 50 50.9032Z" fill="#E2F1AE"/>
     <path d="M150 50.9032C122.386 50.9032 100 28.5174 100 0.903198H200C200 28.5174 177.614 50.9032 150 50.9032Z" fill="#E2F1AE"/>
     <path d="M250 50.9032C222.386 50.9032 200 28.5174 200 0.903198H300C300 28.5174 277.614 50.9032 250 50.9032Z" fill="#E2F1AE"/>

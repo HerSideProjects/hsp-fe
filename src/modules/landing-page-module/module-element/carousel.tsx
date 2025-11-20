@@ -84,7 +84,7 @@ export const Carousel = ({ images }: CarouselProps) => {
 
         <button
           onClick={() => updateCarousel(currentIndex - 1)}
-          className="absolute left-0 md:left-2 top-1/2 -translate-y-1/2 w-8 h-8 md:w-10 md:h-10 rounded-full bg-black text-white flex items-center justify-center cursor-pointer z-30 transition-all duration-300 hover:scale-110 text-xl md:text-2xl border-none outline-none opacity-45"
+          className="absolute left-0 md:left-2 top-1/2 -translate-y-1/2 w-8 h-8 md:w-10 md:h-10 rounded-full bg-black text-white flex items-center justify-center cursor-pointer z-30 transition-all duration-300 hover:scale-110 text-xl md:text-2xl border-none outline-none "
         >
           <ArrowLeft />
         </button>
@@ -100,7 +100,7 @@ export const Carousel = ({ images }: CarouselProps) => {
               <div
                 key={index}
                 onClick={() => updateCarousel(index)}
-                className={`absolute md:w-[520px] w-[320px] h-[280px] md:h-[450px] transition-all duration-[800ms] cursor-pointer ${
+                className={`absolute md:w-[520px] w-[320px] h-[280px] md:h-[450px] transition-all duration-600 ${
                   position === 'hidden' ? 'opacity-0 pointer-events-none' : ''
                 }`}
                 style={{
@@ -123,7 +123,7 @@ export const Carousel = ({ images }: CarouselProps) => {
                     src={src}
                     alt={`Event photo ${index + 1}`}
                     fill
-                    className={`object-cover transition-all duration-[300ms]`}
+                    className={`object-cover transition-all duration-300`}
                   />
                 </div>
               </div>
@@ -133,7 +133,7 @@ export const Carousel = ({ images }: CarouselProps) => {
 
         <button
           onClick={() => updateCarousel(currentIndex + 1)}
-          className="absolute right-0 md:right-2 top-1/2 -translate-y-1/2 w-8 h-8 md:w-10 md:h-10 rounded-full bg-black text-white flex items-center justify-center cursor-pointer z-30 transition-all duration-300 hover:scale-110 text-xl md:text-2xl border-none outline-none opacity-45"
+          className="absolute right-0 md:right-2 top-1/2 -translate-y-1/2 w-8 h-8 md:w-10 md:h-10 rounded-full bg-black text-white flex items-center justify-center cursor-pointer z-30 transition-all duration-300 hover:scale-110 text-xl md:text-2xl border-none outline-none"
         >
           <ArrowRight />
         </button>

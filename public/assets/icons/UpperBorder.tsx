@@ -2,8 +2,7 @@ import { IconInterface } from "../images/type";
 
 export const UpperBorder = ({ width = 24, height = 24, className }: IconInterface) => {
     return (
-    <svg  width="100%"
-      height="auto" viewBox="0 0 1440 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg width="100%" viewBox="0 0 1440 50" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
         <path d="M26 50C-1.61424 50 -24 27.6142 -24 0H76C76 27.6142 53.6142 50 26 50Z" fill="#E2F1AE"/>
         <path d="M126 50C98.3858 50 76 27.6142 76 0H176C176 27.6142 153.614 50 126 50Z" fill="#E2F1AE"/>
         <path d="M226 50C198.386 50 176 27.6142 176 0H276C276 27.6142 253.614 50 226 50Z" fill="#E2F1AE"/>
