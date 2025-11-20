@@ -1,8 +1,8 @@
 import Link from 'next/link'
 import React from 'react'
 import Image from "next/image"
-import { NextEventTitle } from '../../../../../public/assets/images/next-event-vol2/next-event-title'
-import { LearnMoreArrow } from '../../../../../public/assets/icons/LearnMoreArrow'
+import { NextEventTitle } from '../../../../public/assets/images/next-event-vol2/next-event-title'
+import { LearnMoreArrow } from '../../../../public/assets/icons/LearnMoreArrow'
 
 export const NextEventSection = () => {
   return (

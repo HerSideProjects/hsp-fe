@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from "next/image"
-import { YogaIcon } from '../../../../public/assets/icons/YogaIcon';
-import { BringYourOwnMatt } from '../../../../public/assets/images/event-detail-vol2/bring-your-own-matt';
+import { BringYourOwnMatt } from '../../../public/assets/images/event-detail-vol2/bring-your-own-matt';
+import { YogaIcon } from '../../../public/assets/icons/YogaIcon';
 
 interface DetailEventSectionProps {
     scrollToForm: () => void;
@@ -65,7 +65,7 @@ const DetailEventSection = ({ scrollToForm }: DetailEventSectionProps) => {
                                 md:-mr-150
                                 relative z-10
                             ">
-                                <BringYourOwnMatt />
+                                <BringYourOwnMatt className="md:block w-full max-w-[377px] h-[400px] md:h-[618px] shrink" />
                             </div>
 
                         </div>
@@ -73,7 +73,7 @@ const DetailEventSection = ({ scrollToForm }: DetailEventSectionProps) => {
                 </div>
 
                 {/* KANAN */}
-                <div className="relative hidden md:block w-full max-w-[377px] h-[400px] md:h-[618px] shrink-1">
+                <div className="relative hidden md:block w-full max-w-[377px] h-[400px] md:h-[618px] shrink">
                     <Image
                         src="/assets/images/event-detail-vol2/right-img.png"
                         alt="Yoga Session Right"

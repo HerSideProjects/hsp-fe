@@ -1,13 +1,13 @@
 "use client"
 
 import { useEffect, useRef } from 'react'
-import { Review2 } from '../../../../../public/assets/images/prev-event-vol1/reviews/review2'
-import { Review1 } from '../../../../../public/assets/images/prev-event-vol1/reviews/review1'
-import { Review3 } from '../../../../../public/assets/images/prev-event-vol1/reviews/review3'
-import { Review4 } from '../../../../../public/assets/images/prev-event-vol1/reviews/review4'
-import { Review5 } from '../../../../../public/assets/images/prev-event-vol1/reviews/review5'
-import { Review6 } from '../../../../../public/assets/images/prev-event-vol1/reviews/review6'
-import { GridBackground } from '../../../../../public/assets/images/prev-event-vol1/grid-background'
+import { GridBackground } from '../../../../public/assets/images/prev-event-vol1/grid-background'
+import { Review1 } from '../../../../public/assets/images/prev-event-vol1/reviews/review1'
+import { Review2 } from '../../../../public/assets/images/prev-event-vol1/reviews/review2'
+import { Review3 } from '../../../../public/assets/images/prev-event-vol1/reviews/review3'
+import { Review4 } from '../../../../public/assets/images/prev-event-vol1/reviews/review4'
+import { Review5 } from '../../../../public/assets/images/prev-event-vol1/reviews/review5'
+import { Review6 } from '../../../../public/assets/images/prev-event-vol1/reviews/review6'
 
 export default function ReviewSection() {
   const scrollRef = useRef<HTMLDivElement>(null)

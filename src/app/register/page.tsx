@@ -7,11 +7,12 @@ import { submitRegistration } from './actions'
 import { UpperBorder } from '../../../public/assets/icons/UpperBorder'
 import { toast } from 'react-hot-toast'
 import { SelectField } from '@/components/inputs/SelectField'
-import DetailEventSection from '@/components/modules/register-module/detail-event-section'
+
 import { Modal } from '@/components/modals/Modal'
 import { RegisterSuccess } from '../../../public/assets/icons/RegisterSuccess'
 import { MattSelector } from '../../components/inputs/MattSelector'
 import { ROLE_OPTIONS } from './const'
+import DetailEventSection from '@/modules/register-module/detail-event-section'
 
 const RegisterPage = () => {
   type RoleStatusType = {

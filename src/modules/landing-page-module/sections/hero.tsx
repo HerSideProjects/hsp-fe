@@ -1,4 +1,4 @@
-import { Magnifier } from "../../../../../public/assets/images/hero/magnifier";
+import { Magnifier } from "../../../../public/assets/images/hero/magnifier";
 
 export default function Hero() {
     return (
