@@ -15,7 +15,7 @@ const DetailEventSection = ({ scrollToForm }: DetailEventSectionProps) => {
             <div className="flex min-[1070px]:flex-row flex-col items-center justify-between w-full overflow-x-hidden">
 
                 {/* KIRI */}
-                <div className="relative hidden md:block w-full max-w-[377px] h-[400px] md:h-[618px] shrink">
+                <div className="relative hidden lg:block w-full max-w-[377px] h-[400px] lg:h-[618px] shrink">
                     <Image
                         src="/assets/images/event-detail-vol2/left-img.svg"
                         alt="Yoga Session Left"
@@ -56,7 +56,7 @@ const DetailEventSection = ({ scrollToForm }: DetailEventSectionProps) => {
                             </div>
 
                             <div>
-                                <BringYourOwnMatt className="w-[315px] h-[75px] md:w-[630px] md:h-[150px] -mt-3 md:-mt-18 md:-mr-150 relative z-10"/>
+                                <BringYourOwnMatt className="w-[315px] h-[75px] lg:w-[630px] lg:h-[150px] md:w-[378px] md:h-[90px] -mt-3 lg:-mt-18 lg:-mr-150 relative z-10"/>
                             </div>
 
                         </div>
@@ -64,7 +64,7 @@ const DetailEventSection = ({ scrollToForm }: DetailEventSectionProps) => {
                 </div>
 
                 {/* KANAN */}
-                <div className="relative hidden md:block w-full max-w-[377px] h-[400px] md:h-[618px] shrink">
+                <div className="relative hidden lg:block lg:block w-full max-w-[377px] h-[400px] lg:h-[618px] shrink">
                     <Image
                         src="/assets/images/event-detail-vol2/right-img.png"
                         alt="Yoga Session Right"
