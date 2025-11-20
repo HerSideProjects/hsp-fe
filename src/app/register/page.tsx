@@ -71,6 +71,7 @@ const RegisterPage = () => {
     { label: "Software Engineer", value: "Software Engineer" },
     { label: "Data Engineer", value: "Data Engineer" },
     { label: "Mobile Developer", value: "Mobile Developer" },
+    { label: "Quality Assurance", value: "Quality Assurance" },
   ];
 
   const scrollToForm = () => {

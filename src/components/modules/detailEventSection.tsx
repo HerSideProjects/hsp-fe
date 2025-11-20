@@ -85,7 +85,7 @@ const DetailEventSection = ({ scrollToForm }: DetailEventSectionProps) => {
             >
                 <div className="max-w-5xl text-center">
                     <p className="text-[#4F5E31] text-base md:text-lg leading-relaxed font-medium">
-                        We&apos;re kicking things off with a “<span className="font-bold">Step in Her Morning</span>”, is one of the sub-events under Her Side Project, designed to start the day with Yoga which wellness-focused activities that promote mindfulness and connection among participants, followed by an interactive sharing session from various technology fields (<span className="font-bold">e.g., Product Design, Product Management, Software Engineering, Mobile Development, Data Engineering, and more</span>).
+                        We&apos;re kicking things off with a “<span className="font-bold">Step in Her Morning</span>”, is one of the sub-events under Her Side Project, designed to start the day with Yoga which wellness-focused activities that promote mindfulness and connection among participants, followed by an interactive sharing session from various technology fields (<span className="font-bold">e.g., Product Design, Product Management, Software Engineering, Mobile Development, Data Engineering, Quality Assurance, and more</span>).
                     </p>
                 </div>
 
