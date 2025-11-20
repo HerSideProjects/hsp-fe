@@ -1,4 +1,4 @@
-import { IconInterface } from "./type";
+import { IconInterface } from "../images/type";
 
 export const UpperBorder = ({ width = 24, height = 24, className }: IconInterface) => {
     return (

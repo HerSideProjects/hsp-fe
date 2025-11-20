@@ -1,4 +1,4 @@
-import { IconInterface } from "./type";
+import { IconInterface } from "../images/type";
 export const YogaIcon = ({ width = 60, height = 60, className }: IconInterface) => {
     return (
         <svg xmlns="http://www.w3.org/2000/svg" width="61" height="64" viewBox="0 0 61 64" fill="none">
