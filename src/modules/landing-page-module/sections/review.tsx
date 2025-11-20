@@ -20,6 +20,7 @@ export default function ReviewSection() {
     if (!scrollContent) return
 
     scrollContainer.appendChild(scrollContent.cloneNode(true))
+    scrollContainer.appendChild(scrollContent.cloneNode(true))
 
     const animate = () => {
       if (!scrollContainer) return
@@ -27,24 +28,26 @@ export default function ReviewSection() {
       if (scrollContainer.scrollLeft >= scrollContent.scrollWidth) {
         scrollContainer.scrollLeft = 0
       } else {
-        scrollContainer.scrollLeft += 1 // Adjust speed here
+        scrollContainer.scrollLeft += 1
       }
     }
 
-    const animation = setInterval(animate, 30) // Adjust interval for speed
+    const animation = setInterval(animate, 30)
     return () => clearInterval(animation)
   }, [])
 
   return (
      <div className="relative w-full h-full flex justify-center items-center md:py-12 py-4 overflow-hidden">
           <GridBackground className="absolute left-1/2 -translate-x-1/2 w-full md:min-w-[2700px] min-w-[2000px] z-0"/>
-          <div ref={scrollRef} className="flex gap-4 z-20 overflow-x-hidden py-4">
-            <Review1 className="md:min-w-[433px] min-w-[310px] transition-transform duration-100 hover:scale-[1.02] hover:rotate-1 h-full will-change-transform"/>
-            <Review2 className="md:min-w-[433px] min-w-[310px] transition-transform duration-100 hover:scale-[1.02] hover:rotate-1 h-full will-change-transform"/>
-            <Review3 className="md:min-w-[433px] min-w-[310px] transition-transform duration-100 hover:scale-[1.02] hover:rotate-1 h-full will-change-transform"/>
-            <Review4 className="md:min-w-[433px] min-w-[310px] transition-transform duration-100 hover:scale-[1.02] hover:rotate-1 h-full will-change-transform"/>
-            <Review5 className="md:min-w-[433px] min-w-[310px] transition-transform duration-100 hover:scale-[1.02] hover:rotate-1 h-full will-change-transform"/>
-            <Review6 className="md:min-w-[433px] min-w-[310px] transition-transform duration-100 hover:scale-[1.02] hover:rotate-1 h-full will-change-transform"/>
+          <div ref={scrollRef} className="flex whitespace-nowrap overflow-x-hidden py-2">
+            <div className="flex items-center space-x-4">
+              <Review1 className="md:min-w-[433px] min-w-[310px] transition-transform duration-100 hover:scale-[1.02] hover:rotate-1 h-full will-change-transform"/>
+              <Review2 className="md:min-w-[433px] min-w-[310px] transition-transform duration-100 hover:scale-[1.02] hover:rotate-1 h-full will-change-transform"/>
+              <Review3 className="md:min-w-[433px] min-w-[310px] transition-transform duration-100 hover:scale-[1.02] hover:rotate-1 h-full will-change-transform"/>
+              <Review4 className="md:min-w-[433px] min-w-[310px] transition-transform duration-100 hover:scale-[1.02] hover:rotate-1 h-full will-change-transform"/>
+              <Review5 className="md:min-w-[433px] min-w-[310px] transition-transform duration-100 hover:scale-[1.02] hover:rotate-1 h-full will-change-transform"/>
+              <Review6 className="md:min-w-[433px] min-w-[310px] transition-transform duration-100 hover:scale-[1.02] hover:rotate-1 h-full will-change-transform"/>
+            </div>
           </div>
     </div>
   )
