@@ -50,7 +50,7 @@ const DetailEventSection = ({ scrollToForm }: DetailEventSectionProps) => {
 
                             {/* Price Box */}
                             <div className="bg-[#EF3187] text-white rounded-xl border-[3px] border-dashed border-[#FFFFFF] ring-2 ring-white outline-4 outline-[#EF3187] py-3 w-full text-center shadow-lg z-0">
-                                <p className="text-xl md:text-3xl tracking-wide text-center md:text-left md:pl-5 text-[#E2F1AE]">
+                                <p className="text-xl md:text-3xl tracking-wide text-center lg:text-left md:text-center lg:pl-5 text-[#E2F1AE]">
                                     Only for <b>Rp179,000</b>
                                 </p>
                             </div>
@@ -64,7 +64,7 @@ const DetailEventSection = ({ scrollToForm }: DetailEventSectionProps) => {
                 </div>
 
                 {/* KANAN */}
-                <div className="relative hidden lg:block lg:block w-full max-w-[377px] h-[400px] lg:h-[618px] shrink">
+                <div className="relative hidden lg:block w-full max-w-[377px] h-[400px] lg:h-[618px] shrink">
                     <Image
                         src="/assets/images/event-detail-vol2/right-img.png"
                         alt="Yoga Session Right"
