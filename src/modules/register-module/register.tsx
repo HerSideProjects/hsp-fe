@@ -70,7 +70,7 @@ export const RegisterModule = () => {
   return (
     <div>
       <DetailEventSection scrollToForm={scrollToForm} />
-      <div ref={formRef} className="hidden md:hidden min-h-screen bg-[#A6C0FF]" style={{ backgroundImage: "url('/assets/images/bg-regist.png')" }}>
+      <div ref={formRef} className="hidden md:hidden min-h-screen bg-[#A6C0FF] bg-cover bg-center" style={{ backgroundImage: "url('/assets/images/bg-regist.png')" }}>
         <UpperBorder/>
         <main className="py-28 md:w-1/2 mx-auto flex flex-col items-center md:px-0 px-3">
           <form className="bg-[#FEF6EB] flex flex-col items-center rounded-2xl md:px-12 px-6 py-12 gap-6 w-full border border-[#1C1719]" onSubmit={handleSubmit}>
