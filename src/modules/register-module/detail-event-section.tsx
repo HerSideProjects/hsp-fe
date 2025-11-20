@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from "next/image"
-import { YogaIcon } from '../../../../public/assets/icons/YogaIcon';
-import { BringYourOwnMatt } from '../../../../public/assets/images/event-detail-vol2/bring-your-own-matt';
+import { YogaIcon } from '../../../public/assets/icons/YogaIcon';
+import { BringYourOwnMatt } from '../../../public/assets/images/event-detail-vol2/bring-your-own-matt';
 
 interface DetailEventSectionProps {
     scrollToForm: () => void;
@@ -10,12 +10,12 @@ interface DetailEventSectionProps {
 
 const DetailEventSection = ({ scrollToForm }: DetailEventSectionProps) => {
     return (
-        <div className="bg-[#FEF6EB] mx-auto min-h-screen md:pt-36 pt-32 flex flex-col gap-12">
+        <div className="bg-[#FEF6EB] w-full mx-auto min-h-screen md:pt-36 pt-32 flex flex-col gap-12">
             {/* atas */}
             <div className="flex min-[1070px]:flex-row flex-col items-center justify-between w-full overflow-x-hidden">
 
                 {/* KIRI */}
-                <div className="relative hidden md:block w-full max-w-[377px] h-[400px] md:h-[618px] shrink-1">
+                <div className="relative hidden md:block w-full max-w-[377px] h-[400px] md:h-[618px] shrink">
                     <Image
                         src="/assets/images/event-detail-vol2/left-img.svg"
                         alt="Yoga Session Left"
@@ -49,23 +49,14 @@ const DetailEventSection = ({ scrollToForm }: DetailEventSectionProps) => {
                         <div className="w-full flex flex-col items-center relative">
 
                             {/* Price Box */}
-                            <div className="bg-[#EF3187] text-white rounded-xl border-[3px] border-dashed border-[#FFFFFF] 
-      ring-2 ring-white outline-4 outline-[#EF3187] 
-      py-3 w-full text-center shadow-lg z-0">
+                            <div className="bg-[#EF3187] text-white rounded-xl border-[3px] border-dashed border-[#FFFFFF] ring-2 ring-white outline outline-4 outline-[#EF3187] py-3 w-full text-center shadow-lg z-0">
                                 <p className="text-xl md:text-3xl tracking-wide text-center md:text-left md:pl-5 text-[#E2F1AE]">
                                     Only for <b>Rp179,000</b>
                                 </p>
                             </div>
 
-                            <div className="
-                                w-[315px] h-[75px] 
-                                md:w-[630px] md:h-[150px]
-                                -mt-3                
-                                md:-mt-18
-                                md:-mr-150
-                                relative z-10
-                            ">
-                                <BringYourOwnMatt />
+                            <div>
+                                <BringYourOwnMatt className="w-[315px] h-[75px] md:w-[630px] md:h-[150px] -mt-3 md:-mt-18 md:-mr-150 relative z-10"/>
                             </div>
 
                         </div>
@@ -73,7 +64,7 @@ const DetailEventSection = ({ scrollToForm }: DetailEventSectionProps) => {
                 </div>
 
                 {/* KANAN */}
-                <div className="relative hidden md:block w-full max-w-[377px] h-[400px] md:h-[618px] shrink-1">
+                <div className="relative hidden md:block w-full max-w-[377px] h-[400px] md:h-[618px] shrink">
                     <Image
                         src="/assets/images/event-detail-vol2/right-img.png"
                         alt="Yoga Session Right"
@@ -90,7 +81,7 @@ const DetailEventSection = ({ scrollToForm }: DetailEventSectionProps) => {
             >
                 <div className="max-w-5xl text-center">
                     <p className="text-[#4F5E31] text-base md:text-lg leading-relaxed font-medium">
-                        We&apos;re kicking things off with a “<span className="font-bold">Step in Her Morning</span>”, is one of the sub-events under Her Side Project, designed to start the day with Yoga which wellness-focused activities that promote mindfulness and connection among participants, followed by an interactive sharing session from various technology fields (<span className="font-bold">e.g., Product Design, Product Management, Software Engineering, Mobile Development, Data Engineering, Quality Assurance, and more</span>).
+                        We&apos;re kicking things off with a “<span className="font-bold">Step in Her Morning</span>”, is one of the sub-events under Her Side Project, designed to start the day with Yoga which wellness-focused activities that promote mindfulness and connection among participants, followed by an interactive sharing session from various technology fields (<span className="font-bold">e.g., Product Design, Product Management, Software Engineering, Mobile Development, Data Engineering, and more</span>).
                     </p>
                 </div>
 
@@ -156,12 +147,12 @@ const DetailEventSection = ({ scrollToForm }: DetailEventSectionProps) => {
                 </div>
                 {/* regis open */}
                 <div className="flex md:justify-end justify-center">
-                    <div onClick={scrollToForm} className="bg-[#EF3187] text-[#FEF6EB] rounded-[10px] px-6 py-5 w-fit cursor-pointer transition-all duration-300 ease-in-out hover:scale-102 hover:shadow-md hover:shadow-[#EF3187]/50">
+                    <div onClick={scrollToForm} className="bg-[#EF3187] text-[#FEF6EB] rounded-[10px] px-6 py-5 w-fit hover:bg-[#1C1719] cursor-pointer">
                         <p className="font-bold">Regist Now ↓</p>
                     </div>
                 </div>
                 {/* regis close */}
-                <div className="hidden md:hidden md:justify-end justify-center">
+                <div className="hidden md:hidden flex md:justify-end justify-center">
                     <div className="bg-gray-400 text-white rounded-[10px] px-6 py-5 w-fit cursor-not-allowed">
                         <p className="font-bold">Registration Closed</p>
                     </div>

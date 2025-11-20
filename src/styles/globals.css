@@ -45,6 +45,13 @@ body {
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'Losta Masta Thin';
+  src: url('/assets/fonts/LostaMasta-Thin.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 @layer utilities {
   .font-desirableCalligraphy {
     font-family: var(--font-desirable-calligraphy);

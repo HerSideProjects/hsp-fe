@@ -1,6 +1,7 @@
 import React from 'react'
-import { LineBackground } from '../../../../../public/assets/images/prev-event-vol1/line-background'
+
 import { Carousel } from '../module-element/carousel'
+import { LineBackground } from '../../../../public/assets/images/prev-event-vol1/line-background'
 
 const carouselImages = [
   '/assets/images/prev-event-vol1/carousel/foto1.png',

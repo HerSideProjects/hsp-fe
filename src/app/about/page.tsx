@@ -1,4 +1,5 @@
-import { AboutUsModule } from "@/components/modules/about-us-module/about-us";
+import { AboutUsModule } from "@/modules/about-us-module/about-us";
+
 
 export default function About() {
   return (

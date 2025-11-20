@@ -1,4 +1,5 @@
-import { LandingPageModule } from "@/components/modules/landing-page-module/landing-page";
+import { LandingPageModule } from "@/modules/landing-page-module/landing-page";
+
 
 export default function Home() {
   return (

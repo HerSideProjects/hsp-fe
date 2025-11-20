@@ -1,8 +1,8 @@
 import Image from 'next/image'
-import { Tinker } from '../../../../../public/assets/images/vision-mission/tinker';
-import { IconInterface } from '../../../../../public/assets/images/type';
-import { Workshops } from '../../../../../public/assets/images/vision-mission/workshops';
-import { Mentor } from '../../../../../public/assets/images/vision-mission/mentor';
+import { Tinker } from '../../../../public/assets/images/vision-mission/tinker';
+import { Workshops } from '../../../../public/assets/images/vision-mission/workshops';
+import { Mentor } from '../../../../public/assets/images/vision-mission/mentor';
+import { IconInterface } from '../../../../public/assets/images/type';
 
 interface MissionBlockProps {
   Icon: React.FC<IconInterface>;

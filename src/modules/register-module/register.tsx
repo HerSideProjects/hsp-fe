@@ -3,15 +3,15 @@
 import React, { useRef, useState } from 'react'
 import { toast } from 'react-hot-toast'
 import { SelectField } from '@/components/inputs/SelectField'
-import DetailEventSection from '@/components/modules/register-module/detail-event-section'
 import { Modal } from '@/components/modals/Modal'
 import { submitRegistration } from '@/app/register/actions'
-import { UpperBorder } from '../../../../public/assets/icons/UpperBorder'
 import TextField from '@/components/inputs/TextField'
 import { MediaField } from '@/components/inputs/MediaField'
-import { RegisterSuccess } from '../../../../public/assets/icons/RegisterSuccess'
 import { MultipleSelectField } from '@/components/inputs/MultipleSelectField'
 import { options } from '@/app/register/const'
+import DetailEventSection from './detail-event-section'
+import { UpperBorder } from '../../../public/assets/icons/UpperBorder'
+import { RegisterSuccess } from '../../../public/assets/icons/RegisterSuccess'
 
 export const RegisterModule = () => {
     const [selectedCategory, setSelectedCategory] = useState<string[]>([]);
