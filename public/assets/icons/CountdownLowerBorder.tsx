@@ -1,9 +1,8 @@
 import { IconInterface } from "../images/type";
 
-export const CountdownLowerBorder = ({ width = 20, height = 32, className }: IconInterface) => {
+export const CountdownLowerBorder = ({ width = 1500, height = 50, className }: IconInterface) => {
     return (
-    <svg width="100%"
-      height="auto" viewBox="0 0 1355 51" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg width="100%" viewBox="0 0 1355 51" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
         <path d="M50 0.903198C22.3858 0.903198 0 23.289 0 50.9032H100C100 23.289 77.6142 0.903198 50 0.903198Z" fill="#E2F1AE"/>
         <path d="M150 0.903198C122.386 0.903198 100 23.289 100 50.9032H200C200 23.289 177.614 0.903198 150 0.903198Z" fill="#E2F1AE"/>
         <path d="M250 0.903198C222.386 0.903198 200 23.289 200 50.9032H300C300 23.289 277.614 0.903198 250 0.903198Z" fill="#E2F1AE"/>

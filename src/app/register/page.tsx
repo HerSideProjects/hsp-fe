@@ -28,6 +28,7 @@ const RegisterPage = () => {
   const [filePaymentProof, setFilePaymentProof] = useState<File | null>(null);
   const formRef = useRef<HTMLDivElement>(null)
   const [loading, setLoading] = useState(false);
+  const [isLoadingRoles, setIsLoadingRoles] = useState(true);
   const [showModal, setShowModal] = useState(false);
   const [selectedMattValue, setSelectedMattValue] = useState<"no" | "yes">("no");
 
@@ -72,12 +73,19 @@ const RegisterPage = () => {
   };
 
   const fetchRoles = async () => {
+    setIsLoadingRoles(true);
     try {
       const res = await fetch("https://hsp-be.vercel.app/api/user/roles/status");
+      if (!res.ok) {
+        console.error("Failed to fetch roles:", res.status);
+        return;
+      }
       const data = await res.json();
       setRoleStatus(data);
+    } catch (error) {
+      console.error("Error fetching roles:", error);
     } finally {
-      setLoading(false);
+      setIsLoadingRoles(false);
     }
   };
 
@@ -93,6 +101,46 @@ const RegisterPage = () => {
       <div ref={formRef} className="min-h-screen bg-[#EF3187]" style={{ backgroundImage: "url('/assets/images/bg-regist.png')" }}>
         <UpperBorder/>
         <main className="py-28 md:w-4/5 mx-auto flex flex-col items-center md:px-0 px-3">
+          {isLoadingRoles ? (
+            <div className="bg-[#FEF6EB] flex flex-col items-center rounded-2xl md:px-12 px-6 py-12 gap-6 w-full border border-[#1C1719]">
+              <div className="flex flex-col items-center text-center gap-3">
+                <div className="h-9 w-64 bg-[#F5E6D3] rounded animate-pulse"></div>
+                <div className="h-5 w-96 max-w-full bg-[#F5E6D3] rounded animate-pulse"></div>
+              </div>
+              <div className="flex md:flex-row flex-col w-full gap-6">
+                <div className="w-full flex flex-col gap-6">
+                  {[1, 2, 3].map((i) => (
+                    <div key={i} className="flex flex-col gap-2">
+                      <div className="h-5 w-20 bg-[#F5E6D3] rounded animate-pulse"></div>
+                      <div className="h-12 w-full bg-[#F5E6D3] rounded-lg animate-pulse"></div>
+                    </div>
+                  ))}
+                </div>
+                <div className="w-full flex flex-col gap-6">
+                  {[1, 2, 3].map((i) => (
+                    <div key={i} className="flex flex-col gap-2">
+                      <div className="h-5 w-20 bg-[#F5E6D3] rounded animate-pulse"></div>
+                      <div className="h-12 w-full bg-[#F5E6D3] rounded-lg animate-pulse"></div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <div className="w-full flex flex-col gap-2">
+                <div className="h-5 w-16 bg-[#F5E6D3] rounded animate-pulse"></div>
+                <div className="h-4 w-full bg-[#F5E6D3] rounded animate-pulse"></div>
+                <div className="h-12 w-full bg-[#F5E6D3] rounded-lg animate-pulse"></div>
+              </div>
+              <div className="flex md:flex-row flex-col w-full gap-6">
+                <div className="w-full h-40 bg-[#F5E6D3] rounded-lg animate-pulse"></div>
+                <div className="w-full flex flex-col gap-6">
+                  <div className="h-32 w-full bg-[#F8A4C4] rounded-[20px] animate-pulse"></div>
+                  <div className="h-4 w-full bg-[#F5E6D3] rounded animate-pulse"></div>
+                  <div className="h-24 w-full bg-[#F5E6D3] rounded-lg animate-pulse"></div>
+                </div>
+              </div>
+              <div className="h-14 w-full bg-[#F8A4C4] rounded-2xl animate-pulse"></div>
+            </div>
+          ) : (
           <form className="bg-[#FEF6EB] flex flex-col items-center rounded-2xl md:px-12 px-6 py-12 gap-6 w-full border border-[#1C1719]" onSubmit={handleSubmit}>
               <div className="flex flex-col items-center text-center gap-3">
                   <h1 className="font-lostaMasta text-3xl">Registration Form</h1>
@@ -134,8 +182,8 @@ const RegisterPage = () => {
               </div>
               <div className="flex md:flex-row flex-col w-full gap-6">
                 <div className="w-full flex flex-col gap-6">
-                  <MattSelector 
-                    value={selectedMattValue} 
+                  <MattSelector
+                    value={selectedMattValue}
                     onChange={(v) => setSelectedMattValue(v)} />
 
                 </div>
@@ -150,18 +198,18 @@ const RegisterPage = () => {
                 </div>
               </div>
 
-              
+
               <div className="w-full">
                 <button
                   className={`
-                    w-full text-white text-xl font-bold py-4 rounded-2xl 
+                    w-full text-white text-xl font-bold py-4 rounded-2xl
                     transition-all duration-200
 
-                    ${loading 
-                      ? "bg-[#E7609D] cursor-not-allowed" 
+                    ${loading
+                      ? "bg-[#E7609D] cursor-not-allowed"
                       : "bg-[#EF3187] hover:bg-[#1C1719] cursor-pointer"
                     }
-              
+
                   `}
                   disabled={loading}
                 >
@@ -171,6 +219,7 @@ const RegisterPage = () => {
               <input type="hidden" name="role" value={selectedValue} />
               <input type="hidden" name="matt" value={selectedMattValue} />
           </form>
+          )}
         </main>
         {showModal && (
           <Modal onClose={() => setShowModal(false)}>
