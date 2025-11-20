@@ -2,8 +2,8 @@
 
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation'
-import { CountdownUpperBorder } from '../../public/assets/icons/CountdownUpperBorder';
-import { CountdownLowerBorder } from '../../public/assets/icons/CountdownLowerBorder';
+import { CountdownUpperBorder } from '../../../../../public/assets/icons/CountdownUpperBorder';
+import { CountdownLowerBorder } from '../../../../../public/assets/icons/CountdownLowerBorder';
 
 const targetDate = new Date('2025-08-03T09:00:00');
 
@@ -51,7 +51,7 @@ export default function Countdown() {
 
   return (
     <section
-      className="relative mt-12 bg-[#EF3187] text-white text-center rounded-3xl overflow-hidden"
+      className="mx-8 relative mt-12 bg-[#EF3187] text-white text-center rounded-3xl overflow-hidden"
       style={{ backgroundImage: "url('/assets/images/pattern.png')" }}
     >
         <CountdownUpperBorder/>
@@ -72,7 +72,7 @@ export default function Countdown() {
           {/* regis open */}
           <div
             onClick={() => router.push('/register')}
-            className="flex bg-[#1C1719] text-[#FEF6EB] rounded-[10px] px-6 py-5 w-fit cursor-pointer justify-center items-center"
+            className="flex bg-[#1C1719] text-[#FEF6EB] rounded-[10px] px-6 py-5 w-fit cursor-pointer justify-center items-center transition-all duration-300 ease-in-out hover:scale-102 hover:shadow-md hover:shadow-[#1C1719]/50"
           >
             <p className="font-bold">Learn More About the Event</p>
           </div>

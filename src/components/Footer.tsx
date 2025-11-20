@@ -3,6 +3,7 @@
 import { useEffect, useRef } from 'react'
 import Image from 'next/image';
 import { FaInstagram } from 'react-icons/fa';
+import { LogoBlack } from '../../public/assets/images/logo/logo-black';
 
 export default function Footer() {
   const scrollRef = useRef<HTMLDivElement>(null)
@@ -58,7 +59,7 @@ export default function Footer() {
         <div className="z-5 max-w-8xl mx-auto flex flex-col md:flex-row justify-between gap-6">
           <div className="flex-1 max-w-4xl">
             <div className="mb-2">
-              <Image src="/assets/images/Icon-Black.png" alt="HerSideProject Logo" width={80} height={60} />
+              <LogoBlack />
             </div>
             <p className="mb-1 hidden md:block">
               A space for women in STEM to explore their passions beyond the classroom or workplace — a creative playground where ideas turn into action.

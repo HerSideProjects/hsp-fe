@@ -78,3 +78,12 @@ export const options = [
   // Catch-all
   { label: "Other", value: "Other" },
 ];
+
+export const ROLE_OPTIONS = [
+    { label: "Product Designer", value: "Product Designer" },
+    { label: "Product Manager", value: "Product Manager" },
+    { label: "Software Engineer", value: "Software Engineer" },
+    { label: "Quality Assurance", value: "Quality Assurance" },
+    { label: "Data Engineer", value: "Data Engineer" },
+    { label: "Mobile Developer", value: "Mobile Developer" },
+  ];
