@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation'
 import { CountdownUpperBorder } from '../../../../public/assets/icons/CountdownUpperBorder';
 import { CountdownLowerBorder } from '../../../../public/assets/icons/CountdownLowerBorder';
 
-const targetDate = new Date('2025-08-03T09:00:00');
+const targetDate = new Date('2025-12-06T09:00:00');
 
 const getTimeLeft = () => {
   const now = new Date();
