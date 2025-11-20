@@ -10,21 +10,21 @@ export const NextEventSection = () => {
     <div className="flex rounded-[20px]">
         <div className="flex flex-col w-full">
             <div>
-                <NextEventTitle className="min-[1062px]:mt-10 min-[1291px]:w-[560px] min-[1062px]:w-[460px] min-[524px]:w-[400px] min-[899px]:mb-5 min-[700px]:mb-24 min-[524px]:mb-32 -mt-10 w-[322px] mb-14"/>
+                <NextEventTitle className="min-[1062px]:mt-10 min-[1291px]:w-[560px] min-[1062px]:w-[460px] min-[524px]:w-[400px] min-[899px]:mb-5 min-[700px]:mb-24 min-[524px]:mb-32 -mt-12 w-[322px] mb-14"/>
             </div>
-            <div className="w-full min-[524px]:h-[349px] h-[200px] relative flex z-20 bottom-0 ">
+            <div className="w-full min-[524px]:h-[349px] h-[200px] relative flex z-20 bottom-0 pt-4">
                 <div className="absolute w-full h-full left-1/2 -translate-x-1/2">
                     <Image
                         src={"/assets/images/next-event-image.png"}
-                        alt={"Foto Bersama"}
+                        alt={"Table Decorations"}
                         width={1358}
                         height={349}
-                        className="w-full h-full object-cover object-center"
+                        className="w-full h-full object-cover object-top"
                         priority
                     />
                 </div>
             </div>
-            <div className="absolute right-0 min-[524px]:bottom-[175px] bottom-28 min-[1291px]:w-[684px] min-[1062px]:w-[584px] min-[524px]:w-[484px] w-[300px]">
+            <div className="absolute right-0 min-[524px]:bottom-[175px] min-[1291px]:bottom-[120px] bottom-24 min-[1291px]:w-[684px] min-[1062px]:w-[584px] min-[524px]:w-[484px] w-[300px]">
                 <div className="relative w-full h-full">
                     <Image
                         src={"/assets/images/next-event-vol2/text-background.png"}
