@@ -56,8 +56,8 @@ export default function Countdown() {
     >
         <CountdownUpperBorder/>
       <div className="px-8 py-16">
-        <h2 className="text-4xl md:text-6xl pt-5 md:pt-15 font-semibold mb-2" style={{ fontFamily: 'Losta Masta Medium, sans-serif' }}>Our First Event Kicks Off In...</h2>
-        <p className="text-sm text-[#E2F1AE] pt-3 md:text-xl mb-10 font-light">The Countdown Begins! Our First Event Starts In...</p>
+        <h2 className="text-4xl md:text-6xl pt-5 md:pt-15 font-semibold mb-2" style={{ fontFamily: 'Losta Masta Medium, sans-serif' }}>Be Prepared for Our Next Event..</h2>
+        <p className="text-sm text-[#E2F1AE] pt-3 md:text-xl mb-10 font-light">The Countdown Begins! Our Next Event Starts In...</p>
 
         <div className="flex flex-col md:flex-row justify-center gap-6 md:gap-10 pb-10 md:pb-20">
           {timeBlock(timeLeft?.days ?? 0, 'Days')}
