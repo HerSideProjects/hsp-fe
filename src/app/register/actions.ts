@@ -8,6 +8,7 @@ export async function submitRegistration(_: unknown, formData: FormData) {
   const role = formData.get("role") as string;
   const matt = formData.get("matt") as string;
   const file = formData.get("file") as File | null;
+  const selectedActivity = formData.get("activity") as string;
 
   let fileUrl = "";
 
@@ -39,9 +40,10 @@ export async function submitRegistration(_: unknown, formData: FormData) {
     major,
     role,
     matt,
-    payment_proof: fileUrl,  };
+    payment_proof: fileUrl,
+    activity: selectedActivity,};
   try {
-     const res = await fetch("https://hsp-be.vercel.app/api/user/register", {
+     const res = await fetch("http://localhost:8000/api/user/register", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(finalPayload),
