@@ -32,13 +32,13 @@ export const metadata: Metadata = {
     url: '/',
     siteName: 'Her Side Project',
     title: 'Her Side Project',
-    description: 'Her Side Project Website',
+    description: 'A space for women in STEM to explore their passions beyond the classroom or workplace — a creative playground where ideas turn into action.',
     images: [
       {
-        url: '/assets/images/logo/logo-pink.png',
-        width: 1200,
-        height: 630,
-        alt: 'Her Side Project',
+        url: '/assets/images/thumbnail.png',
+        width: 1440,
+        height: 830,
+        alt: 'Her Side Project Preview',
       },
     ],
   },
