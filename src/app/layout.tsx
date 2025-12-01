@@ -7,7 +7,7 @@ import Footer from '@/components/Footer'
 import Provider from './Provider';
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'),
+  metadataBase: new URL('http://hersideproject.vercel.app'),
   title: {
     default: 'Her Side Project',
     template: '%s | Her Side Project',
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Her Side Project',
     description: 'Her Side Project Website',
-    images: ['/assets/images/logo/logo-pink.png'],
+    images: ['/assets/images/thumbnail.png'],
   },
   robots: {
     index: true,
