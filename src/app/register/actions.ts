@@ -43,7 +43,7 @@ export async function submitRegistration(_: unknown, formData: FormData) {
     payment_proof: fileUrl,
     activity: selectedActivity,};
   try {
-     const res = await fetch("http://localhost:8000/api/user/register", {
+     const res = await fetch("http://hsp-be.vercel.app/api/user/register", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(finalPayload),
