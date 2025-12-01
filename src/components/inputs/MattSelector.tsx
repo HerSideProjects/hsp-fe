@@ -5,19 +5,21 @@ import React from "react";
 interface MattSelectorProps {
   value: "no" | "yes";                       
   onChange?: (value: "no" | "yes") => void;  
+  selectedPrice?: number;
 }
 
-export const MattSelector = ({ value, onChange }: MattSelectorProps) => {
-  const basePrice = 179000;
-  const extraPrice = 30000;
+export const MattSelector = ({ value, onChange, selectedPrice }: MattSelectorProps) => {
+  const basePrice = selectedPrice || 0;
+  const extraPrice = 35000;
 
   const total = value === "yes" ? basePrice + extraPrice : basePrice;
 
   return (
     <div
-      className="bg-[#FEF6EB] rounded-xl p-5 border border-black/10"
+      className="bg-[#FEF6EB] rounded-xl p-5 border border-black/10 h-full justify-between flex flex-col"
       style={{ backgroundImage: "url('/assets/images/bg-select-matt.png')" }}
     >
+      <div>
       <p className="font-semibold mb-4">Please select this first</p>
 
       <div className="flex flex-col gap-3">
@@ -64,15 +66,17 @@ export const MattSelector = ({ value, onChange }: MattSelectorProps) => {
             onChange={() => onChange?.("yes")}
           />
 
-          <span>Additional Matt (+Rp 30,000)</span>
+          <span>Additional Matt (+Rp 35,000)</span>
         </label>
       </div>
 
+      </div>
+      <div>
       <div className="border-t border-dashed border-gray-400 my-6"></div>
-
       <p className="text-right">
         Total = <span className="font-bold">Rp {total.toLocaleString("id-ID")}</span>
       </p>
+      </div>
     </div>
   );
 };
