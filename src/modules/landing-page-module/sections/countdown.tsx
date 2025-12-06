@@ -72,12 +72,12 @@ export default function Countdown() {
           {/* regis open */}
           <div
             onClick={() => router.push('/register')}
-            className="flex bg-[#1C1719] text-[#FEF6EB] rounded-[10px] px-6 py-5 w-fit cursor-pointer justify-center items-center transition-all duration-300 ease-in-out hover:scale-102 hover:shadow-md hover:shadow-[#1C1719]/50"
+            className="hidden md:hidden flex bg-[#1C1719] text-[#FEF6EB] rounded-[10px] px-6 py-5 w-fit cursor-pointer justify-center items-center transition-all duration-300 ease-in-out hover:scale-102 hover:shadow-md hover:shadow-[#1C1719]/50"
           >
             <p className="font-bold">Learn More About the Event</p>
           </div>
           {/* regis close */}
-          <div className="hidden bg-gray-400 text-white rounded-[10px] px-6 py-5 w-fit cursor-not-allowed">
+          <div className="bg-gray-400 text-white rounded-[10px] px-6 py-5 w-fit cursor-not-allowed">
               <p className="font-bold">Registration Closed</p>
           </div>
         </div>
