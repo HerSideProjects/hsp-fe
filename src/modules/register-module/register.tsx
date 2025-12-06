@@ -100,8 +100,8 @@ export const RegisterModule = () => {
   return (
     <div>
       <DetailEventSection scrollToForm={scrollToForm} />
-      {/* open form */}
-      <div ref={formRef} className="min-h-screen bg-[#EF3187]" style={{ backgroundImage: "url('/assets/images/bg-regist.png')" }}>
+      {/* close form */}
+      <div ref={formRef} className="hidden md:hidden min-h-screen bg-[#EF3187]" style={{ backgroundImage: "url('/assets/images/bg-regist.png')" }}>
         <UpperBorder/>
         <main className="py-28 md:w-4/5 mx-auto flex flex-col items-center md:px-0 px-3">
           {isLoadingRoles ? (
