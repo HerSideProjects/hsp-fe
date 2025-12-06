@@ -146,13 +146,13 @@ const DetailEventSection = ({ scrollToForm }: DetailEventSectionProps) => {
                     ))}
                 </div>
                 {/* regis open */}
-                <div className="flex md:justify-end justify-center">
+                <div className="hidden md:hidden flex md:justify-end justify-center">
                     <div onClick={scrollToForm} className="bg-[#EF3187] text-[#FEF6EB] rounded-[10px] px-6 py-5 w-fit cursor-pointer transition-all duration-300 ease-in-out hover:scale-102 hover:shadow-md hover:shadow-[#EF3187]/50">
                         <p className="font-bold">Regist Now ↓</p>
                     </div>
                 </div>
                 {/* regis close */}
-                <div className="hidden md:hidden md:justify-end justify-center">
+                <div className="md:justify-end justify-center">
                     <div className="bg-gray-400 text-white rounded-[10px] px-6 py-5 w-fit cursor-not-allowed">
                         <p className="font-bold">Registration Closed</p>
                     </div>
